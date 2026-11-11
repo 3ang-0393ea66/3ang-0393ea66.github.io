@@ -1,0 +1,2195 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>秘密入口导航 - 影视资源聚合与深度解析</title>
+  <meta name="description" content="秘密入口导航汇聚2026年11月最新影视资源入口、剧集更新与深度解析，提供类型片单、观看顺序与用户真实评论，适合影视爱好者筛选内容。">
+  <meta name="keywords" content="秘密入口导航">
+  <style>
+    /* ---------- 设计变量 ---------- */
+    :root {
+      --c-primary: #0f172a;
+      --c-primary-soft: #1e293b;
+      --c-accent: #e11d48;
+      --c-accent-soft: #f43f5e;
+      --c-bg: #f8fafc;
+      --c-surface: #ffffff;
+      --c-text: #0b1120;
+      --c-text-secondary: #475569;
+      --c-text-tertiary: #94a3b8;
+      --c-border: #e2e8f0;
+      --c-divider: #f1f5f9;
+      --radius-card: 14px;
+      --radius-btn: 10px;
+      --radius-tag: 6px;
+      --radius-banner: 18px;
+      --shadow-default: 0 4px 12px rgba(0,0,0,0.04);
+      --shadow-hover: 0 8px 24px rgba(0,0,0,0.08);
+      --font-base: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+      --sticky-offset: 110px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--sticky-offset);
+    }
+
+    body {
+      font-family: var(--font-base);
+      background: var(--c-bg);
+      color: var(--c-text);
+      line-height: 1.6;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; height: auto; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    ul, ol { list-style: none; }
+
+    /* ---------- 吸顶公告条 + 页头 ---------- */
+    .sticky-top {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .announce-bar {
+      background: var(--c-primary);
+      color: #fff;
+      font-size: 13px;
+      padding: 7px 0;
+      overflow: hidden;
+    }
+
+    .announce-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      white-space: nowrap;
+      overflow-x: auto;
+    }
+
+    .announce-brand {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--c-accent-soft);
+    }
+
+    .announce-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #cbd5e1;
+    }
+
+    .announce-item .dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--c-accent-soft);
+      flex-shrink: 0;
+    }
+
+    .announce-item .date {
+      color: #94a3b8;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .announce-item .name {
+      color: #f1f5f9;
+      font-weight: 500;
+    }
+
+    /* ---------- 页头 ---------- */
+    .site-header {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--c-border);
+      padding: 0 24px;
+    }
+
+    .header-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      height: 62px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .logo svg { width: 34px; height: 34px; }
+
+    .logo-text {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: var(--c-primary);
+    }
+
+    .logo-text span { color: var(--c-accent); }
+
+    .nav-main {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      overflow-x: auto;
+    }
+
+    .nav-main a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--c-text-secondary);
+      padding: 6px 12px;
+      border-radius: var(--radius-tag);
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-main a:hover,
+    .nav-main a.active {
+      background: var(--c-divider);
+      color: var(--c-primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--c-bg);
+      border: 1px solid var(--c-border);
+      border-radius: 40px;
+      padding: 0 14px;
+      height: 36px;
+      transition: border-color 0.2s;
+    }
+
+    .search-box:focus-within {
+      border-color: var(--c-accent);
+    }
+
+    .search-box input {
+      border: none;
+      background: none;
+      outline: none;
+      font-size: 13px;
+      width: 150px;
+      color: var(--c-text);
+    }
+
+    .search-box input::placeholder { color: var(--c-text-tertiary); }
+
+    .search-box button {
+      color: var(--c-text-tertiary);
+      display: flex;
+      align-items: center;
+      padding: 4px;
+    }
+
+    .search-box button:hover { color: var(--c-accent); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      padding: 6px;
+      border-radius: var(--radius-tag);
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--c-primary);
+      border-radius: 2px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    /* ---------- 首屏 ---------- */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #3b0764 100%);
+      color: #fff;
+      padding: 56px 24px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -80px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(225,29,72,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -160px; left: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero-content { flex: 1; max-width: 680px; }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--c-accent-soft);
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: #cbd5e1;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      max-width: 560px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--c-accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 11px 24px;
+      border-radius: var(--radius-btn);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #be123c;
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      color: #f1f5f9;
+      font-weight: 500;
+      font-size: 14px;
+      padding: 11px 24px;
+      border-radius: var(--radius-btn);
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.18);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      flex-shrink: 0;
+      width: 340px;
+      height: 340px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-orbit {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .hero-orbit:nth-child(1) { width: 100%; height: 100%; }
+    .hero-orbit:nth-child(2) { width: 78%; height: 78%; border-style: dashed; opacity: 0.5; }
+    .hero-orbit:nth-child(3) { width: 56%; height: 56%; border-color: rgba(225,29,72,0.35); }
+
+    .hero-center-dot {
+      width: 68px; height: 68px;
+      border-radius: 50%;
+      background: var(--c-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 12px rgba(225,29,72,0.15), 0 0 0 28px rgba(225,29,72,0.06);
+    }
+
+    .hero-center-dot svg { width: 30px; height: 30px; fill: #fff; }
+
+    .hero-float-tag {
+      position: absolute;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 40px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #e2e8f0;
+      white-space: nowrap;
+    }
+
+    .tag-1 { top: 12%; left: 2%; }
+    .tag-2 { top: 40%; right: -5%; }
+    .tag-3 { bottom: 18%; left: 8%; }
+    .tag-4 { bottom: 6%; right: 12%; }
+
+    /* ---------- 三栏布局 ---------- */
+    .layout-wrapper {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 28px 24px 48px;
+      display: grid;
+      grid-template-columns: 175px 1fr 250px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* ---------- 左频道栏 ---------- */
+    .sidebar-left {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      max-height: calc(100vh - var(--sticky-offset) - 32px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+
+    .channel-nav {
+      background: var(--c-surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      padding: 16px 0;
+    }
+
+    .channel-nav h3 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--c-text-tertiary);
+      padding: 0 16px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .channel-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      font-size: 13.5px;
+      color: var(--c-text-secondary);
+      transition: background 0.15s, color 0.15s;
+      border-left: 2px solid transparent;
+    }
+
+    .channel-nav a:hover,
+    .channel-nav a.active {
+      background: var(--c-divider);
+      color: var(--c-primary);
+      border-left-color: var(--c-accent);
+    }
+
+    .channel-nav a .badge {
+      margin-left: auto;
+      font-size: 11px;
+      background: var(--c-divider);
+      color: var(--c-text-tertiary);
+      padding: 1px 7px;
+      border-radius: 20px;
+    }
+
+    .channel-nav a:hover .badge { background: var(--c-accent); color: #fff; }
+
+    /* ---------- 主内容区 ---------- */
+    .main-content {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .section {
+      background: var(--c-surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      padding: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .section-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header .more-link {
+      font-size: 13px;
+      color: var(--c-accent);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .section-header .more-link:hover { text-decoration: underline; }
+
+    /* 概览 */
+    .overview-text p {
+      color: var(--c-text-secondary);
+      margin-bottom: 12px;
+      line-height: 1.75;
+    }
+
+    .overview-text p:last-child { margin-bottom: 0; }
+
+    .overview-text strong { color: var(--c-text); font-weight: 600; }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      background: var(--c-surface);
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+
+    .card-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--c-divider);
+    }
+
+    .card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s;
+    }
+
+    .card:hover .card-img img { transform: scale(1.04); }
+
+    .card-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .card-type {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--c-accent);
+      background: #fff1f2;
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+      align-self: flex-start;
+    }
+
+    .card-title {
+      font-size: 14.5px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--c-text);
+    }
+
+    .card-desc {
+      font-size: 12.5px;
+      color: var(--c-text-secondary);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .card-tags span {
+      font-size: 11px;
+      color: var(--c-text-tertiary);
+      background: var(--c-divider);
+      padding: 2px 7px;
+      border-radius: var(--radius-tag);
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11.5px;
+      color: var(--c-text-tertiary);
+      border-top: 1px solid var(--c-divider);
+      padding-top: 8px;
+      margin-top: 4px;
+    }
+
+    .card-meta .hot { color: var(--c-accent); font-weight: 600; }
+
+    /* 更新动态列表 */
+    .update-list { display: flex; flex-direction: column; gap: 0; }
+
+    .update-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--c-divider);
+      align-items: flex-start;
+    }
+
+    .update-item:last-child { border-bottom: none; }
+
+    .update-date {
+      font-size: 12px;
+      color: var(--c-text-tertiary);
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+      width: 46px;
+      padding-top: 1px;
+    }
+
+    .update-info { flex: 1; min-width: 0; }
+
+    .update-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--c-text);
+      margin-bottom: 2px;
+    }
+
+    .update-name:hover { color: var(--c-accent); }
+
+    .update-summary {
+      font-size: 12.5px;
+      color: var(--c-text-secondary);
+      line-height: 1.5;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .category-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 8px;
+      border-radius: var(--radius-btn);
+      background: var(--c-bg);
+      border: 1px solid transparent;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      text-align: center;
+    }
+
+    .category-item:hover {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      transform: translateY(-2px);
+    }
+
+    .category-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: var(--c-surface);
+      box-shadow: var(--shadow-default);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--c-accent);
+    }
+
+    .category-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--c-text);
+    }
+
+    .category-count {
+      font-size: 11px;
+      color: var(--c-text-tertiary);
+    }
+
+    /* 深度解析 */
+    .deep-dive h3 {
+      font-size: 16.5px;
+      font-weight: 700;
+      margin: 22px 0 10px;
+      color: var(--c-primary);
+    }
+
+    .deep-dive h3:first-of-type { margin-top: 0; }
+
+    .deep-dive p {
+      color: var(--c-text-secondary);
+      margin-bottom: 12px;
+      line-height: 1.8;
+    }
+
+    .deep-dive ul {
+      margin: 8px 0 16px 20px;
+      list-style: disc;
+      color: var(--c-text-secondary);
+      line-height: 1.8;
+    }
+
+    .deep-dive ul li { margin-bottom: 4px; }
+
+    .deep-dive .callout {
+      background: #fef2f2;
+      border-left: 3px solid var(--c-accent);
+      padding: 12px 16px;
+      border-radius: 0 var(--radius-btn) var(--radius-btn) 0;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: var(--c-text-secondary);
+    }
+
+    .deep-dive .callout strong { color: var(--c-text); }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 14px 0;
+    }
+
+    .compare-table th,
+    .compare-table td {
+      border: 1px solid var(--c-border);
+      padding: 9px 12px;
+      text-align: left;
+    }
+
+    .compare-table th {
+      background: var(--c-bg);
+      font-weight: 600;
+      color: var(--c-text);
+      font-size: 12.5px;
+    }
+
+    .compare-table td { color: var(--c-text-secondary); }
+
+    /* 体验指南 */
+    .guide-steps { counter-reset: step; display: flex; flex-direction: column; gap: 12px; }
+
+    .guide-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 12px 14px;
+      background: var(--c-bg);
+      border-radius: var(--radius-btn);
+      counter-increment: step;
+    }
+
+    .guide-step::before {
+      content: counter(step);
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: var(--c-accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .guide-step strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 3px;
+      color: var(--c-text);
+    }
+
+    .guide-step p {
+      font-size: 13px;
+      color: var(--c-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--c-divider);
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-item summary {
+      padding: 13px 0;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--c-text);
+      transition: color 0.15s;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::before {
+      content: '+';
+      font-size: 16px;
+      color: var(--c-accent);
+      font-weight: 600;
+      width: 18px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    .faq-item[open] summary::before {
+      content: '−';
+    }
+
+    .faq-item summary:hover { color: var(--c-accent); }
+
+    .faq-answer {
+      padding: 0 0 14px 26px;
+      font-size: 13.5px;
+      color: var(--c-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+    }
+
+    .comment-card {
+      background: var(--c-bg);
+      border-radius: var(--radius-btn);
+      padding: 12px 14px;
+    }
+
+    .comment-user {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .comment-avatar {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: var(--c-accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .comment-name {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--c-text);
+    }
+
+    .comment-time {
+      font-size: 11px;
+      color: var(--c-text-tertiary);
+      margin-left: auto;
+    }
+
+    .comment-text {
+      font-size: 13px;
+      color: var(--c-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 相关资讯 */
+    .news-list { display: flex; flex-direction: column; gap: 16px; }
+
+    .news-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .news-thumb {
+      width: 100px;
+      height: 72px;
+      border-radius: var(--radius-tag);
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--c-divider);
+    }
+
+    .news-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+    .news-body { flex: 1; min-width: 0; }
+
+    .news-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--c-text);
+      margin-bottom: 3px;
+      line-height: 1.4;
+    }
+
+    .news-title:hover { color: var(--c-accent); }
+
+    .news-meta {
+      font-size: 11.5px;
+      color: var(--c-text-tertiary);
+      margin-bottom: 4px;
+    }
+
+    .news-summary {
+      font-size: 12.5px;
+      color: var(--c-text-secondary);
+      line-height: 1.5;
+    }
+
+    /* 相关推荐 */
+    .rec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .rec-tag {
+      display: inline-block;
+      font-size: 13px;
+      padding: 7px 14px;
+      background: var(--c-bg);
+      border: 1px solid var(--c-border);
+      border-radius: 40px;
+      color: var(--c-text-secondary);
+      transition: all 0.2s;
+    }
+
+    .rec-tag:hover {
+      background: var(--c-accent);
+      color: #fff;
+      border-color: var(--c-accent);
+    }
+
+    /* 补充板块：热门榜单 */
+    .rank-list { display: flex; flex-direction: column; gap: 0; }
+
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--c-divider);
+    }
+
+    .rank-item:last-child { border-bottom: none; }
+
+    .rank-num {
+      width: 24px;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--c-text-tertiary);
+      font-variant-numeric: tabular-nums;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .rank-item:nth-child(1) .rank-num { color: #e11d48; }
+    .rank-item:nth-child(2) .rank-num { color: #f97316; }
+    .rank-item:nth-child(3) .rank-num { color: #eab308; }
+
+    .rank-name {
+      flex: 1;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--c-text);
+    }
+
+    .rank-score {
+      font-size: 12px;
+      color: var(--c-text-tertiary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ---------- 右侧辅助栏 ---------- */
+    .sidebar-right {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .aside-card {
+      background: var(--c-surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      padding: 16px;
+    }
+
+    .aside-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--c-divider);
+    }
+
+    .hot-list { display: flex; flex-direction: column; gap: 0; }
+
+    .hot-list-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--c-divider);
+      font-size: 13px;
+    }
+
+    .hot-list-item:last-child { border-bottom: none; }
+
+    .hot-list-item .idx {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--c-text-tertiary);
+      width: 16px;
+      flex-shrink: 0;
+    }
+
+    .hot-list-item:nth-child(1) .idx { color: #e11d48; }
+    .hot-list-item:nth-child(2) .idx { color: #f97316; }
+    .hot-list-item:nth-child(3) .idx { color: #eab308; }
+
+    .hot-list-item a {
+      flex: 1;
+      color: var(--c-text-secondary);
+      transition: color 0.15s;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .hot-list-item a:hover { color: var(--c-accent); }
+
+    .hot-list-item .hot-badge {
+      font-size: 10px;
+      background: #fff1f2;
+      color: var(--c-accent);
+      padding: 1px 6px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .update-mini {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .update-mini-item {
+      font-size: 12.5px;
+      color: var(--c-text-secondary);
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+    }
+
+    .update-mini-item .t {
+      font-size: 11px;
+      color: var(--c-text-tertiary);
+      flex-shrink: 0;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .update-mini-item a {
+      color: var(--c-text);
+      font-weight: 500;
+    }
+
+    .update-mini-item a:hover { color: var(--c-accent); }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag-cloud span {
+      font-size: 12px;
+      color: var(--c-text-secondary);
+      background: var(--c-bg);
+      padding: 4px 10px;
+      border-radius: 40px;
+      transition: background 0.2s, color 0.2s;
+      cursor: default;
+    }
+
+    .tag-cloud span:hover {
+      background: #fff1f2;
+      color: var(--c-accent);
+    }
+
+    /* ---------- 页脚 ---------- */
+    .site-footer {
+      background: var(--c-primary);
+      color: #94a3b8;
+      padding: 44px 24px 28px;
+      margin-top: 12px;
+    }
+
+    .footer-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 36px;
+    }
+
+    .footer-brand {
+      font-size: 20px;
+      font-weight: 800;
+      color: #f1f5f9;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand span { color: var(--c-accent-soft); }
+
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #94a3b8;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      color: #e2e8f0;
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 12.5px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover { color: #f1f5f9; }
+
+    .footer-bottom {
+      max-width: 1380px;
+      margin: 32px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #1e293b;
+      font-size: 12px;
+      color: #64748b;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    /* ---------- 回到顶部 ---------- */
+    .back-top {
+      position: fixed;
+      right: 24px;
+      bottom: 32px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--c-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(225,29,72,0.35);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s, visibility 0.25s, transform 0.2s;
+      z-index: 900;
+      font-size: 18px;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-top:hover { transform: translateY(-3px); }
+
+    /* ---------- 遮罩 & 移动菜单 ---------- */
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 1100;
+    }
+
+    .overlay.active { display: block; }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 280px;
+      height: 100%;
+      background: var(--c-surface);
+      z-index: 1200;
+      padding: 20px;
+      overflow-y: auto;
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+    }
+
+    .mobile-menu.open { transform: translateX(0); }
+
+    .mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .mobile-menu-close {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--c-divider);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--c-text);
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 11px 12px;
+      font-size: 14px;
+      color: var(--c-text-secondary);
+      border-radius: var(--radius-tag);
+      transition: background 0.15s;
+    }
+
+    .mobile-menu a:hover { background: var(--c-bg); color: var(--c-primary); }
+
+    /* ---------- 搜索无结果 ---------- */
+    .search-empty {
+      display: none;
+      text-align: center;
+      padding: 24px 16px;
+      color: var(--c-text-tertiary);
+      font-size: 13.5px;
+    }
+
+    .search-empty.show { display: block; }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 1024px) {
+      .layout-wrapper {
+        grid-template-columns: 160px 1fr;
+      }
+      .sidebar-right {
+        display: none;
+      }
+      .hero-visual { width: 260px; height: 260px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 740px) {
+      .layout-wrapper {
+        grid-template-columns: 1fr;
+        padding: 16px 14px 32px;
+        gap: 20px;
+      }
+
+      .sidebar-left { display: none; }
+
+      .nav-main { display: none; }
+      .hamburger { display: flex; }
+      .search-box { display: none; }
+
+      .hero-inner { flex-direction: column; gap: 28px; }
+      .hero { padding: 36px 16px 32px; }
+      .hero-visual { width: 200px; height: 200px; }
+
+      .announce-inner { padding: 0 14px; gap: 16px; }
+      .header-inner { padding: 0 14px; gap: 14px; }
+
+      .section { padding: 18px 14px; }
+      .section-header h2 { font-size: 17px; }
+
+      .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 10px;
+      }
+
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .comment-grid { grid-template-columns: 1fr; }
+
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+
+      .news-item { flex-direction: column; gap: 8px; }
+      .news-thumb { width: 100%; height: 140px; }
+
+      .back-top { right: 14px; bottom: 18px; }
+
+      .mobile-menu { display: block; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+
+    /* 焦点样式 */
+    a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
+      outline: 2px solid var(--c-accent);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶区：公告条 + 页头 -->
+<div class="sticky-top">
+  <div class="announce-bar">
+    <div class="announce-inner">
+      <span class="announce-brand">秘密入口导航</span>
+      <span class="announce-item"><span class="dot"></span><span class="date">11-08</span><span class="name">《暗夜追踪》第四季上线</span></span>
+      <span class="announce-item"><span class="dot"></span><span class="date">11-07</span><span class="name">新增「悬疑剧场」入口</span></span>
+      <span class="announce-item"><span class="dot"></span><span class="date">11-06</span><span class="name">用户投稿突破 320 条</span></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="秘密入口导航首页">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="#e11d48" stroke-width="2.5"/>
+          <path d="M14 20 L26 20 M20 14 L20 26" stroke="#e11d48" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="20" cy="20" r="4" fill="#e11d48"/>
+        </svg>
+        <span class="logo-text">秘密<span>入口</span>导航</span>
+      </a>
+
+      <nav class="nav-main" aria-label="主导航">
+        <a href="#overview" class="active">领域概览</a>
+        <a href="#featured">精选推荐</a>
+        <a href="#updates">最新更新</a>
+        <a href="#categories">分类入口</a>
+        <a href="#deep-dive">深度解析</a>
+        <a href="#guide">体验指南</a>
+        <a href="#faq">常见问答</a>
+        <a href="#comments">用户评论</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-box" role="search">
+          <input type="text" id="searchInput" placeholder="搜索条目..." aria-label="搜索站内条目">
+          <button type="button" id="searchBtn" aria-label="搜索">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- 遮罩 -->
+<div class="overlay" id="overlay"></div>
+
+<!-- 移动菜单 -->
+<div class="mobile-menu" id="mobileMenu" aria-label="移动端导航">
+  <div class="mobile-menu-header">
+    <span class="logo-text" style="font-size:16px;">秘密入口导航</span>
+    <button class="mobile-menu-close" id="menuCloseBtn" aria-label="关闭菜单">×</button>
+  </div>
+  <nav aria-label="移动端导航链接">
+    <a href="#overview">领域概览</a>
+    <a href="#featured">精选推荐</a>
+    <a href="#updates">最新更新</a>
+    <a href="#categories">分类入口</a>
+    <a href="#deep-dive">深度解析</a>
+    <a href="#guide">体验指南</a>
+    <a href="#faq">常见问答</a>
+    <a href="#comments">用户评论</a>
+    <a href="#news">相关资讯</a>
+    <a href="#recommend">相关推荐</a>
+    <a href="#rank">热门榜单</a>
+  </nav>
+</div>
+
+<!-- 首屏 -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>秘密入口导航</h1>
+      <p class="hero-desc">汇聚 2026 年 11 月最新影视资源入口、剧集更新与类型片单，覆盖悬疑、科幻、犯罪纪实等方向，每条推荐附具体看点与观看顺序建议。</p>
+      <div class="hero-actions">
+        <a href="#featured" class="btn-primary">浏览精选条目 →</a>
+        <a href="#updates" class="btn-ghost">查看今日更新</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-orbit"></div>
+      <div class="hero-orbit"></div>
+      <div class="hero-orbit"></div>
+      <div class="hero-center-dot">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <span class="hero-float-tag tag-1">悬疑 47 部</span>
+      <span class="hero-float-tag tag-2">科幻 32 部</span>
+      <span class="hero-float-tag tag-3">犯罪纪实 19 部</span>
+      <span class="hero-float-tag tag-4">今日更新 8 条</span>
+    </div>
+  </div>
+</section>
+
+<!-- 三栏布局 -->
+<div class="layout-wrapper">
+
+  <!-- 左侧频道栏 -->
+  <aside class="sidebar-left" aria-label="频道导航">
+    <nav class="channel-nav">
+      <h3>频道索引</h3>
+      <a href="#overview" class="active">悬疑推理 <span class="badge">47</span></a>
+      <a href="#featured">科幻未来 <span class="badge">32</span></a>
+      <a href="#updates">犯罪纪实 <span class="badge">19</span></a>
+      <a href="#categories">都市情感 <span class="badge">28</span></a>
+      <a href="#deep-dive">历史传记 <span class="badge">15</span></a>
+      <a href="#guide">恐怖惊悚 <span class="badge">23</span></a>
+      <a href="#faq">喜剧生活 <span class="badge">21</span></a>
+      <a href="#comments">动画精选 <span class="badge">14</span></a>
+      <a href="#news">纪录片 <span class="badge">11</span></a>
+      <a href="#recommend">投稿精选 <span class="badge">8</span></a>
+    </nav>
+  </aside>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+
+    <!-- 1. 领域概览 -->
+    <section class="section" id="overview">
+      <div class="section-header">
+        <h2>悬疑与类型影视内容生态</h2>
+      </div>
+      <div class="overview-text">
+        <p>悬疑推理、科幻未来、犯罪纪实构成了当前影视内容消费的三个主要方向。2026 年秋季档最明显的变化是平台对<strong>短剧集</strong>的倾斜——《暗夜追踪》第四季把单集时长压到 35 分钟，8 集讲完一个完整案件；《雾港迷局》则采用双时间线，每集结尾给出一个可验证的物证编号。这类结构对观众的注意力要求变了，不再是“追更”而是“复盘”。</p>
+        <p>科幻方向集中在<strong>近未来设定</strong>。《记忆折叠》第三季把脑机接口的伦理争议拆成三组对照案例，每集片尾附 90 秒制作团队对设定逻辑的说明。犯罪纪实类今年出现了《链上追踪》这样以区块链洗钱为题材的作品，取材自 2025 年公开的三起跨境案件，片中出现的钱包地址经查证有真实链上记录可对照。</p>
+        <p>类型片单的消费逻辑也在变。过去按“评分从高到低”排序，现在更多人先看<strong>叙事结构标签</strong>——单线、双线、群像、倒叙——再决定投入时间。一个 8 集短剧如果前两集没有建立清晰的悬念锚点，第三集的弃剧率在站内统计里会跳到 41%。这不是口味问题，是结构问题。</p>
+      </div>
+    </section>
+
+    <!-- 2. 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="section-header">
+        <h2>本周值得投入时间的 8 个条目</h2>
+        <a href="#rank" class="more-link">查看完整榜单 →</a>
+      </div>
+      <div class="card-grid" id="cardGrid">
+        <article class="card">
+          <div class="card-img"><img src="https://picsum.photos/seed/anye0401/400/300" width="400" height="300" loading="lazy" alt="《暗夜追踪》第四季海报，雨夜街头剪影"></div>
+          <div class="card-body">
+            <span class="card-type">悬疑剧集</span>
+            <h3 class="card-title">暗夜追踪 第四季</h3>
+            <p class="card-desc">8 集短剧，双时间线叙事。每集结尾附物证编号，观众可对照第三集给出的现场照片逐帧复盘。前两集节奏偏慢，第三集反转后才进入正题。</p>
+            <div class="card-tags"><span>双线叙事</span><span>案中案</span><span>短剧集</span></div>
+            <div class="card-meta"><span class="hot">热度 9.2</span><span>11-08 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img"><img src="https://picsum.photos/seed/wugang1102/400/300" width="400" height="300" loading="lazy" alt="《雾港迷局》港口码头场景剧照"></div>
+          <div class="card-body">
+            <span class="card-type">犯罪悬疑</span>
+            <h3 class="card-title">雾港迷局</h3>
+            <p class="card-desc">以港口走私案为底本，12 集体量。第三集出现的集装箱编号在第六集被重新提及，形成闭环。对海关流程的还原度获多位从业者评论认可。</p>
+            <div class="card-tags"><span>群像</span><span>走私案</span><span>行业剧</span></div>
+            <div class="card-meta"><span class="hot">热度 8.9</span><span>11-06 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img"><img src="https://picsum.photos/seed/jiyi0305/400/300" width="400" height="300" loading="lazy" alt="《记忆折叠》第三季脑机接口界面概念图"></div>
+          <div class="card-body">
+            <span class="card-type">科幻剧集</span>
+            <h3 class="card-title">记忆折叠 第三季</h3>
+            <p class="card-desc">脑机接口题材，每集拆解一组伦理争议。片尾 90 秒制作说明解释了设定依据，其中关于记忆删除权限的条款设计有现实法律对照。</p>
+            <div class="card-tags"><span>近未来</span><span>伦理</span><span>设定考据</span></div>
+            <div class="card-meta"><span class="hot">热度 9.0</span><span>11-05 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img"><img src="https://picsum.photos/seed/lainshang1101/400/300" width="400" height="300" loading="lazy" alt="《链上追踪》区块链数据可视化界面截图"></div>
+          <div class="card-body">
+            <span class="card-type">犯罪纪实</span>
+            <h3 class="card-title">链上追踪</h3>
+            <p class="card-desc">取材 2025 年三起跨境洗钱案，片中钱包地址经查证有真实链上记录。第三集对混币器运作的动画解释较克制，没有过度简化。</p>
+            <div class="card-tags"><span>区块链</span><span>真实案件</span><span>纪录片</span></div>
+            <div class="card-meta"><span class="hot">热度 8.4</span><span>11-04 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img"><img src="https://picsum.photos/seed/chengshi1103/400/300" width="400" height="300" loading="lazy" alt="《城市边缘》城中村街景剧照"></div>
+          <div class="card-body">
+            <span class="card-type">都市情感</span>
+            <h3 class="card-title">城市边缘</h3>
+            <p class="card-desc">聚焦城中村拆迁中的三组家庭，10 集体量。第四集关于补偿协议的对话用了大量真实条款措辞，节奏偏慢但信息密度高。</p>
+            <div class="card-tags"><span>现实主义</span><span>群像</span><span>拆迁题材</span></div>
+            <div class="card-meta"><span class="hot">热度 8.2</span><span>11-03 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img"><img src="https://picsum.photos/seed/lishi1104/400/300" width="400" height="300" loading="lazy" alt="《长安十二时》历史街市场景剧照"></div>
+          <div class="card-body">
+            <span class="card-type">历史传记</span>
+            <h3 class="card-title">长安十二时</h3>
+            <p class="card-desc">以唐代驿站系统为切口，每集讲一个时辰内的传递任务。道具组复刻了三种不同规格的驿符，剧中出现的驿道里程与史料记载有对照说明。</p>
+            <div class="card-tags"><span>唐代</span><span>驿站</span><span>考据向</span></div>
+            <div class="card-meta"><span class="hot">热度 8.7</span><span>11-02 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img"><img src="https://picsum.photos/seed/kongbu1105/400/300" width="400" height="300" loading="lazy" alt="《第七层》老式公寓走廊恐怖场景"></div>
+          <div class="card-body">
+            <span class="card-type">恐怖惊悚</span>
+            <h3 class="card-title">第七层</h3>
+            <p class="card-desc">老式公寓楼题材，6 集。声音设计是主要亮点，第三集全程没有配乐，只靠环境音制造压迫感。胆小者建议白天观看。</p>
+            <div class="card-tags"><span>心理恐怖</span><span>声音设计</span><span>短篇</span></div>
+            <div class="card-meta"><span class="hot">热度 8.1</span><span>11-01 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img"><img src="https://picsum.photos/seed/xiju1106/400/300" width="400" height="300" loading="lazy" alt="《三号食堂》市井食堂场景剧照"></div>
+          <div class="card-body">
+            <span class="card-type">喜剧生活</span>
+            <h3 class="card-title">三号食堂</h3>
+            <p class="card-desc">每集一道菜配一个食客故事，12 集。第七集关于外卖骑手的段落拍得克制，没有煽情台词，靠细节推进。适合下饭看。</p>
+            <div class="card-tags"><span>市井</span><span>单元剧</span><span>轻喜剧</span></div>
+            <div class="card-meta"><span class="hot">热度 7.8</span><span>10-30 更新</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="search-empty" id="searchEmpty">没有找到匹配的条目，换个关键词试试，比如“悬疑”或“科幻”。</div>
+    </section>
+
+    <!-- 3. 最新更新 -->
+    <section class="section" id="updates">
+      <div class="section-header">
+        <h2>11 月 8 日更新动态</h2>
+        <a href="#news" class="more-link">更多资讯 →</a>
+      </div>
+      <div class="update-list">
+        <div class="update-item">
+          <span class="update-date">11-08</span>
+          <div class="update-info">
+            <a href="#featured" class="update-name">《暗夜追踪》第四季 第 3 集上线</a>
+            <p class="update-summary">本集首次公开 2019 年案件的物证编号对照表，片尾附二维码可查看高清现场照片。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11-08</span>
+          <div class="update-info">
+            <a href="#featured" class="update-name">《雾港迷局》第 9 集提前释出</a>
+            <p class="update-summary">原定 11 月 10 日上线，因剪辑版本调整提前两天。港口追逐戏延长至 11 分钟。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11-07</span>
+          <div class="update-info">
+            <a href="#featured" class="update-name">《记忆折叠》第三季 制作特辑发布</a>
+            <p class="update-summary">22 分钟幕后，重点讲脑机接口界面设计参考了 2024 年某实验室公开的操作协议。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11-07</span>
+          <div class="update-info">
+            <a href="#featured" class="update-name">《链上追踪》新增链上数据对照页</a>
+            <p class="update-summary">制作方在官方渠道放出片中 7 个钱包地址的链上查询入口，可自行核对交易记录。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11-06</span>
+          <div class="update-info">
+            <a href="#featured" class="update-name">《长安十二时》第 5 集驿符道具解析</a>
+            <p class="update-summary">道具组发布 12 分钟视频，对比三种驿符的考古依据，其中一件参照了 1987 年出土实物。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11-05</span>
+          <div class="update-info">
+            <a href="#featured" class="update-name">《第七层》导演评论音轨上线</a>
+            <p class="update-summary">第 3 集无配乐段落的声场设计思路公开，提到用了 14 层环境音叠加。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11-04</span>
+          <div class="update-info">
+            <a href="#featured" class="update-name">《城市边缘》第 6 集剧本围读片段</a>
+            <p class="update-summary">编剧与两位拆迁办前工作人员的对谈，涉及补偿协议条款的措辞调整过程。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11-03</span>
+          <div class="update-info">
+            <a href="#featured" class="update-name">《三号食堂》第 7 集外卖骑手篇</a>
+            <p class="update-summary">全片 28 分钟，没有画外音旁白。导演在映后谈里说“不想替角色说话”。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-header">
+        <h2>按类型找片</h2>
+      </div>
+      <div class="category-grid">
+        <a href="#featured" class="category-item">
+          <span class="category-icon">悬</span>
+          <span class="category-name">悬疑推理</span>
+          <span class="category-count">47 部</span>
+        </a>
+        <a href="#featured" class="category-item">
+          <span class="category-icon">科</span>
+          <span class="category-name">科幻未来</span>
+          <span class="category-count">32 部</span>
+        </a>
+        <a href="#featured" class="category-item">
+          <span class="category-icon">犯</span>
+          <span class="category-name">犯罪纪实</span>
+          <span class="category-count">19 部</span>
+        </a>
+        <a href="#featured" class="category-item">
+          <span class="category-icon">都</span>
+          <span class="category-name">都市情感</span>
+          <span class="category-count">28 部</span>
+        </a>
+        <a href="#featured" class="category-item">
+          <span class="category-icon">史</span>
+          <span class="category-name">历史传记</span>
+          <span class="category-count">15 部</span>
+        </a>
+        <a href="#featured" class="category-item">
+          <span class="category-icon">恐</span>
+          <span class="category-name">恐怖惊悚</span>
+          <span class="category-count">23 部</span>
+        </a>
+        <a href="#featured" class="category-item">
+          <span class="category-icon">喜</span>
+          <span class="category-name">喜剧生活</span>
+          <span class="category-count">21 部</span>
+        </a>
+        <a href="#featured" class="category-item">
+          <span class="category-icon">动</span>
+          <span class="category-name">动画精选</span>
+          <span class="category-count">14 部</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. 深度解析 -->
+    <section class="section deep-dive" id="deep-dive">
+      <div class="section-header">
+        <h2>短剧集叙事结构：物证链与时间压缩</h2>
+      </div>
+
+      <h3>单集 35 分钟意味着什么</h3>
+      <p>《暗夜追踪》第四季把单集时长从第三季的 48 分钟压到 35 分钟，总集数从 10 集减到 8 集。制作方在 10 月 28 日的发布会上给出的解释是“去掉所有非必要过场”。实际效果是，前三集每集平均给出 4.2 个可记录的信息点（物证编号、时间戳、人物关系变动），而第三季同期平均只有 2.8 个。信息密度上去了，但代价是人物前史几乎全部靠对话带出，没有闪回。</p>
+      <p>这个取舍在观众端造成了分化。站内第 3 集播出后的 24 小时内，关于“节奏太快”的评论占 18%，关于“终于不拖了”的占 31%，剩下 51% 在讨论物证编号的具体对应关系。也就是说，超过一半的活跃观众把注意力放在了可核对的信息上，而不是叙事节奏本身。</p>
+
+      <h3>物证编号作为叙事锚点</h3>
+      <p>每集片尾出现的物证编号不是装饰。第三集给出的 2019-0731-04 号物证，在第六集被重新提及两次：一次是主角在档案室翻到，一次是反派在电话里说错了一个数字。这种设计把“观众能不能自己发现矛盾”变成了叙事的一部分。制作团队在 11 月 2 日的直播里承认，编号规则参考了真实卷宗的归档方式，前四位是年份，中间四位是日期，后两位是当日序号。</p>
+      <div class="callout">
+        <strong>可核对的判断：</strong>如果一部 8 集短剧在前两集没有建立至少 3 个可被观众独立验证的信息点（编号、日期、地名），第三集之后的悬念就变成了单向输出——观众只能等着被告诉答案，没法参与推理。这和“节奏快慢”是两回事。
+      </div>
+
+      <h3>双时间线与群像的代价</h3>
+      <p>《雾港迷局》用了双时间线，2018 年的走私案和 2025 年的复查并行。12 集体量里，每条时间线实际只分到 6 集的展开空间。第七集把两条线合并时，出现了三个此前没有交代的人物关系，站内评论里有人整理出了 11 处需要暂停回看才能理清的细节。这不是缺陷，是选择——用信息密度换叙事效率，但要求观众在观看时保持笔记习惯。</p>
+      <table class="compare-table">
+        <thead>
+          <tr><th>结构类型</th><th>代表条目</th><th>集数</th><th>信息点/集</th><th>适合的观看方式</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>单线短剧</td><td>暗夜追踪 第四季</td><td>8</td><td>4.2</td><td>连续看，随手记编号</td></tr>
+          <tr><td>双线群像</td><td>雾港迷局</td><td>12</td><td>3.5</td><td>分段看，每 3 集复盘一次</td></tr>
+          <tr><td>单元伦理</td><td>记忆折叠 第三季</td><td>10</td><td>2.8</td><td>单集独立看，片尾说明必看</td></tr>
+          <tr><td>纪实档案</td><td>链上追踪</td><td>6</td><td>5.1</td><td>配合链上数据页对照看</td></tr>
+        </tbody>
+      </table>
+
+      <h3>纪录片的可信度分层</h3>
+      <p>《链上追踪》第三集关于混币器的段落，制作方把信息来源分成了三层：已公开的法院判决书（可查）、办案人员采访（有录音但未公开）、匿名信源（仅口述）。片中没有把三层混在一起讲，而是用字幕标出了每段信息的层级。这种做法在犯罪纪实类内容里不算常见——大多数作品会把“采访”和“推测”放在同一个叙述流里。</p>
+      <p>观众端可以做的核对动作很具体：打开片方放出的链上查询页，输入片中出现的钱包地址，看交易记录是否和旁白描述的时间、金额对得上。对不上的地方，片方在官网 FAQ 里列出了两种解释：地址脱敏导致的偏差，以及部分交易发生在混币之后无法追溯。这两种解释本身也需要被检验，但至少给出了可操作的方向。</p>
+    </section>
+
+    <!-- 6. 体验指南 -->
+    <section class="section" id="guide">
+      <div class="section-header">
+        <h2>怎么判断一个条目值不值得投入时间</h2>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div>
+            <strong>先看前两集有没有可验证的信息锚点</strong>
+            <p>编号、日期、地名、文件号，任何观众能自己记住并核对的东西。两个以上，可以继续；一个都没有，大概率是单向叙事。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div>
+            <strong>查一下制作方有没有放出对照材料</strong>
+            <p>《链上追踪》放了链上查询页，《长安十二时》放了驿符道具解析。有对照材料的条目，通常对细节更自信。没有的，不代表不好，但需要降低对考据的预期。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div>
+            <strong>扫一眼第三集播出后 24 小时的评论分布</strong>
+            <p>如果超过一半的评论在讨论具体细节（而不是“好看”“一般”），说明叙事真的把观众带进去了。如果评论集中在演员或画面，剧情本身的讨论度可能不高。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div>
+            <strong>同类条目比较时，看集数和信息点的比例</strong>
+            <p>不是集数越少越好。8 集 4.2 个信息点/集，和 12 集 3.5 个信息点/集，后者给观众的消化时间其实更多。选哪个取决于你是连续看还是分段看。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div>
+            <strong>纪录片先看信息来源标注</strong>
+            <p>判决书、采访、匿名信源，分不分层是硬指标。分层的，核对成本低；不分的，需要自己边看边拆。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section" id="faq">
+      <div class="section-header">
+        <h2>常见问答</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>《暗夜追踪》第四季和第三季在叙事上有什么区别？</summary>
+          <div class="faq-answer">第三季是 10 集、单线叙事、每集 48 分钟，信息点主要靠对话带出。第四季压到 8 集、35 分钟，改用物证编号作为贯穿线索，前三集平均每集 4.2 个可核对信息点，比第三季同期多出 1.4 个。代价是人物前史几乎没有闪回，全靠台词交代。</div>
+        </details>
+        <details class="faq-item">
+          <summary>《链上追踪》里的钱包地址是真的吗？</summary>
+          <div class="faq-answer">片中出现的 7 个地址里有 5 个可以查到真实链上交易记录，时间与金额和旁白描述基本吻合。另外 2 个做了脱敏处理，片方在 11 月 7 日放出的查询页里标注了“已偏移”。制作团队在采访里说，脱敏是因为涉及尚未结案的案件。</div>
+        </details>
+        <details class="faq-item">
+          <summary>双时间线的剧是不是更容易烂尾？</summary>
+          <div class="faq-answer">《雾港迷局》第 7 集合并两条线时出现了 3 个此前未交代的人物关系，站内有人整理了 11 处需要回看的细节。合并本身不必然导致烂尾，但 12 集体量下每条线实际只有 6 集展开空间，信息压得太紧时，观众容易出现理解断层。分段看、每 3 集复盘一次能缓解这个问题。</div>
+        </details>
+        <details class="faq-item">
+          <summary>《长安十二时》的驿符道具是什么来路？</summary>
+          <div class="faq-answer">剧中出现了三种规格的驿符，道具组在 11 月 6 日的解析视频里说，其中一件参照了 1987 年某唐代驿站遗址出土的实物，另外两件根据《唐六典》里的记载复原。里程数据有对照说明，片中出现的驿道距离和史料记载的误差在 5% 以内。</div>
+        </details>
+        <details class="faq-item">
+          <summary>《第七层》第 3 集为什么没有配乐？</summary>
+          <div class="faq-answer">导演在评论音轨里说，这一集想测试“纯环境音能不能撑住 35 分钟的压迫感”。实际用了 14 层环境音叠加，包括楼道回声、水管低频震动和远处的电梯提示音。站内评论里对这段的评价分化明显，有人觉得是亮点，有人觉得闷。</div>
+        </details>
+        <details class="faq-item">
+          <summary>犯罪纪实类条目怎么判断可信度？</summary>
+          <div class="faq-answer">看信息来源有没有分层标注。《链上追踪》把法院判决书、办案人员采访、匿名信源分开标注，核对成本低。大多数同类作品会把采访和推测混在一个叙述流里，这时候需要自己留意旁白里有没有出现“据推测”“据了解”这类没有后续交代的词。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8. 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-header">
+        <h2>14 条来自观众的随手记录</h2>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">林</span><span class="comment-name">林间有风</span><span class="comment-time">11-08</span></div>
+          <p class="comment-text">暗夜追踪第四季第三集那个物证编号我暂停了三次才看清，2019-0731-04，后面第六集反派说错成 2019-0731-14，这个细节做得可以。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">K</span><span class="comment-name">Kaleido</span><span class="comment-time">11-08</span></div>
+          <p class="comment-text">雾港迷局第 9 集提前放出来是好事，但港口追逐戏 11 分钟真的有必要吗，前面查集装箱那段信息量大多了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">阿</span><span class="comment-name">阿茶</span><span class="comment-time">11-07</span></div>
+          <p class="comment-text">记忆折叠第三季片尾那 90 秒说明我每次都会看完，比正片还较真。第三集关于记忆删除权限的条款，我去翻了他们说的那个实验室协议，确实对得上。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">老</span><span class="comment-name">老白干</span><span class="comment-time">11-07</span></div>
+          <p class="comment-text">链上追踪那个查询页试了一下，5 个地址能查到，2 个查不到。片方说脱敏了，行吧，至少标出来了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">冬</span><span class="comment-name">冬眠中</span><span class="comment-time">11-06</span></div>
+          <p class="comment-text">长安十二时的驿符解析视频比正片还长，12 分钟。不过 1987 年那个出土实物确实有记录，我去查了，是真的。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">大</span><span class="comment-name">大雾</span><span class="comment-time">11-06</span></div>
+          <p class="comment-text">第七层第三集没配乐那段，戴耳机看的，楼道回声那几层叠得有点东西。但说实话剧情推进太慢了，差点睡着。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">J</span><span class="comment-name">Juno_</span><span class="comment-time">11-05</span></div>
+          <p class="comment-text">城市边缘第四集那段补偿协议对话，我爸以前在拆迁办干过，他说措辞基本没错。能拍到这个程度不容易。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">橙</span><span class="comment-name">橙子汽水</span><span class="comment-time">11-05</span></div>
+          <p class="comment-text">三号食堂第七集外卖骑手那段，没有煽情台词这点很好。但最后一幕那个镜头有点刻意了，收得不太自然。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">月</span><span class="comment-name">月半</span><span class="comment-time">11-04</span></div>
+          <p class="comment-text">雾港迷局第 7 集合并两条线的时候我是真的懵了，暂停回看了四次才把新出来的三个人物关系理清。这剧不适合下饭看。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">陆</span><span class="comment-name">陆仁甲</span><span class="comment-time">11-03</span></div>
+          <p class="comment-text">暗夜追踪这季节奏是快了，但人物动机有点薄。第三集那个反转靠编号撑起来了，可主角为什么要去翻档案室，交代得太简略。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">小</span><span class="comment-name">小满</span><span class="comment-time">11-02</span></div>
+          <p class="comment-text">记忆折叠第三季第 7 集关于记忆删除权限的条款，我去翻了他们说的那个实验室协议，确实对得上。这剧的考据比大多数科幻剧认真。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">北</span><span class="comment-name">北纬30</span><span class="comment-time">11-01</span></div>
+          <p class="comment-text">链上追踪第三集混币器那段动画做得很克制，没有过度简化。之前看过一个同类纪录片，把混币画得跟魔法一样。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">星</span><span class="comment-name">星野</span><span class="comment-time">10-30</span></div>
+          <p class="comment-text">最近在看长安十二时，道具是真的讲究。但每集结尾那个史料对照字太小了，手机上根本看不清，希望改进一下。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user"><span class="comment-avatar">路</span><span class="comment-name">路人丁</span><span class="comment-time">10-29</span></div>
+          <p class="comment-text">第七层看完之后两天不敢走楼道。效果是达到了，但第二集那个地下室场景是不是有点太暗了，我调了手机亮度才看清。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-header">
+        <h2>近期影视动态</h2>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/news-yanyie/600/400" width="600" height="400" loading="lazy" alt="《暗夜追踪》第四季发布会现场照片"></div>
+          <div class="news-body">
+            <a href="#featured" class="news-title">《暗夜追踪》第四季发布会：8 集成片，物证编号规则首次公开</a>
+            <p class="news-meta">2026-10-28 · 制作方发布会</p>
+            <p class="news-summary">制作方在会上展示了编号规则：前四位年份、中间四位日期、后两位当日序号。第三集出现的编号对应 2019 年 7 月 31 日第 4 号物证，该日期与卷宗记录一致。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/news-lian/600/400" width="600" height="400" loading="lazy" alt="《链上追踪》制作团队采访场景"></div>
+          <div class="news-body">
+            <a href="#featured" class="news-title">《链上追踪》制作团队回应钱包地址脱敏：涉及未结案案件</a>
+            <p class="news-meta">2026-11-07 · 制作方采访</p>
+            <p class="news-summary">针对观众质疑 2 个地址查不到链上记录，制作团队解释这 2 个地址做了偏移处理，原因是关联案件尚未结案。11 月 7 日放出的查询页已标注“已偏移”。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/news-yifu/600/400" width="600" height="400" loading="lazy" alt="《长安十二时》驿符道具特写"></div>
+          <div class="news-body">
+            <a href="#featured" class="news-title">《长安十二时》道具组发布驿符解析，参照 1987 年出土实物</a>
+            <p class="news-meta">2026-11-06 · 道具组视频</p>
+            <p class="news-summary">三种规格的驿符中，长条形的参照了 1987 年某唐代驿站遗址出土实物，另两种根据《唐六典》复原。片中出现的驿道里程与史料误差在 5% 以内。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/news-wugang/600/400" width="600" height="400" loading="lazy" alt="《雾港迷局》港口追逐戏剧照"></div>
+          <div class="news-body">
+            <a href="#featured" class="news-title">《雾港迷局》第 9 集提前两天上线，港口戏延长至 11 分钟</a>
+            <p class="news-meta">2026-11-08 · 播出平台公告</p>
+            <p class="news-summary">原定 11 月 10 日上线，因剪辑版本调整提前。平台公告称延长部分集中在港口追逐段落，新增了 3 个集装箱编号特写镜头。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/news-jiyi/600/400" width="600" height="400" loading="lazy" alt="《记忆折叠》第三季制作特辑画面"></div>
+          <div class="news-body">
+            <a href="#featured" class="news-title">《记忆折叠》第三季幕后特辑上线，脑机接口界面参考 2024 年实验室协议</a>
+            <p class="news-meta">2026-11-07 · 制作特辑</p>
+            <p class="news-summary">22 分钟特辑重点讲了界面设计过程。美术指导提到操作协议参考了 2024 年某实验室公开的文档，其中记忆删除权限的条款设计在剧中做了简化处理。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/news-diaoyan/600/400" width="600" height="400" loading="lazy" alt="《第七层》导演在录音棚工作照片"></div>
+          <div class="news-body">
+            <a href="#featured" class="news-title">《第七层》第 3 集无配乐段落用了 14 层环境音</a>
+            <p class="news-meta">2026-11-05 · 导演评论音轨</p>
+            <p class="news-summary">导演在评论音轨里透露，这一集全程没有配乐，靠楼道回声、水管低频和电梯提示音等 14 层环境音叠加制造压迫感。混音花了 11 天。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10. 相关推荐 -->
+    <section class="section" id="recommend">
+      <div class="section-header">
+        <h2>按具体方向找片</h2>
+      </div>
+      <div class="rec-tags">
+        <a href="#featured" class="rec-tag">物证链叙事</a>
+        <a href="#featured" class="rec-tag">双时间线短剧</a>
+        <a href="#featured" class="rec-tag">区块链犯罪纪实</a>
+        <a href="#featured" class="rec-tag">唐代驿站考据</a>
+        <a href="#featured" class="rec-tag">脑机接口伦理</a>
+        <a href="#featured" class="rec-tag">城中村拆迁群像</a>
+        <a href="#featured" class="rec-tag">环境音恐怖</a>
+        <a href="#featured" class="rec-tag">市井单元喜剧</a>
+      </div>
+    </section>
+
+    <!-- 11. 补充板块：热门榜单 -->
+    <section class="section" id="rank">
+      <div class="section-header">
+        <h2>11 月第一周热度榜</h2>
+      </div>
+      <div class="rank-list">
+        <div class="rank-item"><span class="rank-num">1</span><span class="rank-name">暗夜追踪 第四季</span><span class="rank-score">9.2</span></div>
+        <div class="rank-item"><span class="rank-num">2</span><span class="rank-name">记忆折叠 第三季</span><span class="rank-score">9.0</span></div>
+        <div class="rank-item"><span class="rank-num">3</span><span class="rank-name">雾港迷局</span><span class="rank-score">8.9</span></div>
+        <div class="rank-item"><span class="rank-num">4</span><span class="rank-name">长安十二时</span><span class="rank-score">8.7</span></div>
+        <div class="rank-item"><span class="rank-num">5</span><span class="rank-name">链上追踪</span><span class="rank-score">8.4</span></div>
+        <div class="rank-item"><span class="rank-num">6</span><span class="rank-name">城市边缘</span><span class="rank-score">8.2</span></div>
+        <div class="rank-item"><span class="rank-num">7</span><span class="rank-name">第七层</span><span class="rank-score">8.1</span></div>
+        <div class="rank-item"><span class="rank-num">8</span><span class="rank-name">三号食堂</span><span class="rank-score">7.8</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右侧辅助栏 -->
+  <aside class="sidebar-right" aria-label="辅助信息">
+    <div class="aside-card">
+      <h3>实时热榜</h3>
+      <div class="hot-list">
+        <div class="hot-list-item"><span class="idx">1</span><a href="#featured">暗夜追踪 第四季 第3集</a><span class="hot-badge">热</span></div>
+        <div class="hot-list-item"><span class="idx">2</span><a href="#featured">雾港迷局 第9集提前</a><span class="hot-badge">新</span></div>
+        <div class="hot-list-item"><span class="idx">3</span><a href="#featured">链上追踪 地址查询</a><span class="hot-badge">热</span></div>
+        <div class="hot-list-item"><span class="idx">4</span><a href="#featured">记忆折叠 第三季</a></div>
+        <div class="hot-list-item"><span class="idx">5</span><a href="#featured">长安十二时 驿符</a></div>
+        <div class="hot-list-item"><span class="idx">6</span><a href="#featured">第七层 无配乐</a></div>
+      </div>
+    </div>
+
+    <div class="aside-card">
+      <h3>今日更新速览</h3>
+      <div class="update-mini">
+        <div class="update-mini-item"><span class="t">11-08</span><a href="#featured">暗夜追踪 S4E3</a></div>
+        <div class="update-mini-item"><span class="t">11-08</span><a href="#featured">雾港迷局 E9</a></div>
+        <div class="update-mini-item"><span class="t">11-07</span><a href="#featured">记忆折叠 特辑</a></div>
+        <div class="update-mini-item"><span class="t">11-07</span><a href="#featured">链上追踪 查询页</a></div>
+        <div class="update-mini-item"><span class="t">11-06</span><a href="#featured">长安十二时 解析</a></div>
+        <div class="update-mini-item"><span class="t">11-05</span><a href="#featured">第七层 音轨</a></div>
+      </div>
+    </div>
+
+    <div class="aside-card">
+      <h3>热门标签</h3>
+      <div class="tag-cloud">
+        <span>物证编号</span><span>双线叙事</span><span>链上追踪</span><span>驿符</span><span>脑机接口</span><span>环境音</span><span>短剧集</span><span>拆迁群像</span><span>分集复盘</span><span>考据向</span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">秘密<span>入口</span>导航</div>
+      <p class="footer-desc">覆盖 2026 年 10 月至 11 月的剧集更新与深度解析，条目类型包括悬疑剧、科幻剧、犯罪纪实、历史传记与都市情感，每日 6—8 条更新，每周发布一次热度榜。</p>
+    </div>
+    <div class="footer-col">
+      <h4>频道</h4>
+      <a href="#overview">悬疑推理</a>
+      <a href="#featured">科幻未来</a>
+      <a href="#updates">犯罪纪实</a>
+      <a href="#categories">都市情感</a>
+    </div>
+    <div class="footer-col">
+      <h4>内容</h4>
+      <a href="#deep-dive">深度解析</a>
+      <a href="#guide">体验指南</a>
+      <a href="#faq">常见问答</a>
+      <a href="#comments">用户评论</a>
+    </div>
+    <div class="footer-col">
+      <h4>互动</h4>
+      <a href="#comments">投稿精选</a>
+      <a href="#news">相关资讯</a>
+      <a href="#rank">热门榜单</a>
+      <a href="#recommend">相关推荐</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 秘密入口导航 · 内容聚合示例页</span>
+    <span>页面数据为示例条目，更新至 2026-11-08</span>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "秘密入口导航",
+  "description": "汇聚2026年11月最新影视资源入口、剧集更新与深度解析，提供类型片单、观看顺序与用户真实评论。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "《暗夜追踪》第四季和第三季在叙事上有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第三季是10集、单线叙事、每集48分钟。第四季压到8集、35分钟，改用物证编号作为贯穿线索，前三集平均每集4.2个可核对信息点。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《链上追踪》里的钱包地址是真的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "片中出现的7个地址里有5个可以查到真实链上交易记录，另外2个做了脱敏处理，片方在11月7日放出的查询页里标注了已偏移。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "双时间线的剧是不是更容易烂尾？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "《雾港迷局》第7集合并两条线时出现了3个此前未交代的人物关系，12集体量下每条线只有6集展开空间，信息压得太紧时观众容易出现理解断层。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《长安十二时》的驿符道具是什么来路？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "剧中三种规格的驿符，其中一件参照了1987年某唐代驿站遗址出土实物，另外两件根据《唐六典》复原，里程数据误差在5%以内。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《第七层》第3集为什么没有配乐？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "导演在评论音轨里说想测试纯环境音能不能撑住35分钟的压迫感，实际用了14层环境音叠加，混音花了11天。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "犯罪纪实类条目怎么判断可信度？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "看信息来源有没有分层标注。《链上追踪》把法院判决书、办案人员采访、匿名信源分开标注，核对成本低。"
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+  (function() {
+    // 回到顶部
+    var backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > window.innerHeight) {
+        backTop.classList.add('visible');
+      } else {
+        backTop.classList.remove('visible');
+      }
+    });
+    backTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 移动菜单
+    var hamburger = document.getElementById('hamburgerBtn');
+    var overlay = document.getElementById('overlay');
+    var mobileMenu = document.getElementById('mobileMenu');
+    var menuClose = document.getElementById('menuCloseBtn');
+
+    function openMenu() {
+      mobileMenu.classList.add('open');
+      overlay.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      overlay.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+    if (hamburger) {
+      hamburger.addEventListener('click', function() {
+        if (mobileMenu.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+    }
+    if (menuClose) menuClose.addEventListener('click', closeMenu);
+    if (overlay) overlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+    // 移动端点击导航后收起
+    var mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(function(a) {
+      a.addEventListener('click', closeMenu);
+    });
+
+    // 搜索过滤
+    var searchInput = document.getElementById('searchInput');
+    var searchBtn = document.getElementById('searchBtn');
+    var cardGrid = document.getElementById('cardGrid');
+    var cards = cardGrid ? Array.prototype.slice.call(cardGrid.querySelectorAll('.card')) : [];
+    var searchEmpty = document.getElementById('searchEmpty');
+
+    function filterCards() {
+      var q = searchInput.value.trim().toLowerCase();
+      var visibleCount = 0;
+      cards.forEach(function(card) {
+        var text = card.textContent.toLowerCase();
+        if (!q || text.indexOf(q) !== -1) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      if (searchEmpty) {
+        if (visibleCount === 0 && q) {
+          searchEmpty.classList.add('show');
+        } else {
+          searchEmpty.classList.remove('show');
+        }
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', filterCards);
+    }
+    if (searchBtn) {
+      searchBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        filterCards();
+      });
+    }
+    if (searchInput) {
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          filterCards();
+        }
+      });
+    }
+  })();
+</script>
+
+</body>
+      </html>
