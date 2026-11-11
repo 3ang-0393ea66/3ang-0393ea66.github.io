@@ -1,0 +1,1655 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>枫花恋2025最新作品 - 作品聚合与动态追踪</title>
+<meta name="description" content="枫花恋2025最新作品聚合页，涵盖2025年新作条目、发行动态、类型分类与深度解析，适合关注作品更新与幕后信息的观众查阅。">
+<meta name="keywords" content="枫花恋2025最新作品">
+<style>
+:root {
+  --primary: #8b2f4b;
+  --primary-light: #b95a72;
+  --primary-dark: #5e1a2e;
+  --bg: #fcf8f7;
+  --panel: #ffffff;
+  --text: #2c2424;
+  --text-secondary: #6b5e5e;
+  --text-tertiary: #9b8e8e;
+  --border: #e8dfdd;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-tag: 4px;
+  --radius-banner: 16px;
+  --shadow-default: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-hover: 0 6px 20px rgba(139,47,75,0.12);
+  --sticky-offset: 104px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font-family: inherit; }
+
+/* 吸顶公告条 + 页头 */
+.sticky-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(252,248,247,0.92);
+}
+.announce-bar {
+  background: var(--primary-dark);
+  color: #f5e6e9;
+  font-size: 13px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.announce-bar .brand-tag {
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+.announce-bar .ann-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.announce-bar .ann-date {
+  background: rgba(255,255,255,0.15);
+  padding: 1px 7px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.site-header {
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid var(--border);
+  padding: 0 16px;
+}
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  gap: 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.brand svg { width: 32px; height: 32px; }
+.brand-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: 0.5px;
+}
+.main-nav {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+}
+.main-nav a {
+  padding: 6px 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  border-radius: var(--radius-btn);
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.main-nav a:hover, .main-nav a:focus-visible {
+  background: var(--primary-light);
+  color: #fff;
+  outline: none;
+}
+.header-search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.header-search input {
+  width: 150px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  font-size: 13px;
+  background: var(--panel);
+  color: var(--text);
+}
+.header-search input:focus {
+  outline: 2px solid var(--primary-light);
+  border-color: transparent;
+}
+.hamburger {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--primary-dark);
+  transition: transform 0.2s;
+}
+
+/* 首屏 */
+.hero {
+  max-width: 1360px;
+  margin: 24px auto 0;
+  padding: 0 16px;
+}
+.hero-inner {
+  background: linear-gradient(135deg, #fdf0f3 0%, #fce8ed 50%, #f9dde4 100%);
+  border-radius: var(--radius-banner);
+  padding: 40px 36px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-inner::after {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,47,75,0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-text h1 {
+  font-size: 34px;
+  line-height: 1.3;
+  color: var(--primary-dark);
+  margin-bottom: 14px;
+  font-weight: 800;
+}
+.hero-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 560px;
+  margin-bottom: 20px;
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: var(--radius-btn);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  display: inline-block;
+  background: transparent;
+  color: var(--primary);
+  padding: 10px 22px;
+  border-radius: var(--radius-btn);
+  font-size: 14px;
+  font-weight: 600;
+  border: 1.5px solid var(--primary-light);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover {
+  background: rgba(139,47,75,0.06);
+  border-color: var(--primary);
+}
+.hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+.hero-stat {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.hero-stat strong {
+  color: var(--primary-dark);
+  font-size: 16px;
+}
+
+/* 三栏布局 */
+.layout {
+  max-width: 1360px;
+  margin: 28px auto 0;
+  padding: 0 16px 40px;
+  display: grid;
+  grid-template-columns: 180px 1fr 250px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* 左侧频道索引 */
+.channel-sidebar {
+  position: sticky;
+  top: var(--sticky-offset);
+  background: var(--panel);
+  border-radius: var(--radius-card);
+  padding: 16px 12px;
+  box-shadow: var(--shadow-default);
+}
+.channel-sidebar h2 {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  padding-left: 6px;
+}
+.channel-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.channel-sidebar nav a {
+  padding: 7px 10px;
+  border-radius: var(--radius-btn);
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: background 0.15s, color 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.channel-sidebar nav a:hover,
+.channel-sidebar nav a:focus-visible {
+  background: #fdf0f3;
+  color: var(--primary-dark);
+  outline: none;
+}
+.channel-sidebar nav a .ch-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  flex-shrink: 0;
+}
+
+/* 主内容 */
+.main-content {
+  min-width: 0;
+}
+.section {
+  background: var(--panel);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-default);
+}
+.section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 6px;
+}
+.section-sub {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-bottom: 16px;
+}
+
+/* 概览 */
+.overview-text p {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+.overview-text p:last-child { margin-bottom: 0; }
+
+/* 卡片网格 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  background: var(--panel);
+}
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  background: #f3ecea;
+}
+.card-body {
+  padding: 12px 14px;
+}
+.card-body h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.tag {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: var(--radius-tag);
+  font-size: 11px;
+  background: #fdf0f3;
+  color: var(--primary);
+  white-space: nowrap;
+}
+.tag-type {
+  background: var(--primary);
+  color: #fff;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+/* 更新列表 */
+.update-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.update-item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.update-item:last-child { border-bottom: none; }
+.update-date {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  width: 68px;
+}
+.update-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-right: 8px;
+}
+.update-summary {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* 分类入口 */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+.cat-item {
+  display: block;
+  padding: 14px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background: #fdf8f7;
+  transition: background 0.15s, border-color 0.15s;
+}
+.cat-item:hover, .cat-item:focus-visible {
+  background: #fdf0f3;
+  border-color: var(--primary-light);
+  outline: none;
+}
+.cat-count {
+  display: block;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* 深度解析 */
+.deep-dive h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 18px 0 8px;
+}
+.deep-dive h3:first-of-type { margin-top: 4px; }
+.deep-dive p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.deep-dive ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+.deep-dive li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+.divider-quote {
+  border-left: 3px solid var(--primary-light);
+  padding: 8px 14px;
+  background: #fdf8f7;
+  border-radius: 0 var(--radius-btn) var(--radius-btn) 0;
+  font-size: 13.5px;
+  color: var(--primary-dark);
+  margin: 12px 0;
+}
+
+/* 体验指南 */
+.guide-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.guide-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.step-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+.step-content h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.step-content p {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* FAQ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.faq-list details {
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+}
+.faq-list details:last-child { border-bottom: none; }
+.faq-list summary {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: '+';
+  font-size: 18px;
+  color: var(--primary-light);
+  font-weight: 400;
+}
+.faq-list details[open] summary::after { content: '−'; }
+.faq-list .faq-answer {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  padding-top: 8px;
+  line-height: 1.7;
+}
+
+/* 评论 */
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.comment-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.comment-item:last-child { border-bottom: none; }
+.comment-avatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f0e6e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.comment-body { flex: 1; min-width: 0; }
+.comment-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+.comment-text {
+  font-size: 13.5px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* 资讯 */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.news-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.news-date {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  width: 68px;
+  padding-top: 2px;
+}
+.news-content h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.news-content p {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* 相关推荐 */
+.rec-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.rec-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.rec-tag:hover, .rec-tag:focus-visible {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* 榜单 */
+.rank-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rank-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.rank-item:last-child { border-bottom: none; }
+.rank-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #fdf0f3;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.rank-item:nth-child(-n+3) .rank-num {
+  background: var(--primary);
+  color: #fff;
+}
+.rank-title {
+  font-size: 14px;
+  font-weight: 600;
+  flex: 1;
+}
+.rank-score {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+/* 右侧辅助栏 */
+.assist-sidebar {
+  position: sticky;
+  top: var(--sticky-offset);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.assist-card {
+  background: var(--panel);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  box-shadow: var(--shadow-default);
+}
+.assist-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.hot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.hot-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 13px;
+}
+.hot-item .hot-rank {
+  width: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-align: center;
+  flex-shrink: 0;
+}
+.hot-item:nth-child(-n+3) .hot-rank { color: var(--primary); }
+.hot-item .hot-title {
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.update-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.stream-item {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border);
+}
+.stream-item:last-child { border-bottom: none; }
+.stream-date {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  display: block;
+}
+
+/* 投稿互动区 */
+.submit-box {
+  background: linear-gradient(135deg, #fdf0f3, #fce8ed);
+  border-radius: var(--radius-card);
+  padding: 20px;
+  text-align: center;
+  border: 1px dashed var(--primary-light);
+}
+.submit-box h3 {
+  font-size: 15px;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+.submit-box p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+/* 页脚 */
+.site-footer {
+  background: var(--primary-dark);
+  color: #e8dadd;
+  padding: 40px 16px 24px;
+  margin-top: 20px;
+}
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 32px;
+}
+.footer-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.footer-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #c4aeb2;
+  margin-bottom: 12px;
+}
+.footer-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.footer-col a {
+  display: block;
+  font-size: 13px;
+  color: #c4aeb2;
+  padding: 3px 0;
+  transition: color 0.15s;
+}
+.footer-col a:hover { color: #fff; }
+.footer-bottom {
+  max-width: 1360px;
+  margin: 24px auto 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  font-size: 12px;
+  color: #9b8287;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* 回到顶部 */
+.back-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: var(--shadow-hover);
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 50;
+}
+.back-top:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+/* 遮罩 */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 90;
+}
+.overlay.active { display: block; }
+
+/* 响应式 */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr 240px;
+  }
+  .channel-sidebar {
+    display: none;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .hero-stat { flex: 1; min-width: 140px; }
+  .main-nav { display: none; }
+  .main-nav.active {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--panel);
+    flex-direction: column;
+    padding: 12px 16px;
+    box-shadow: var(--shadow-hover);
+    z-index: 95;
+    border-bottom: 1px solid var(--border);
+  }
+  .hamburger { display: flex; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 740px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .assist-sidebar {
+    position: static;
+  }
+  .hero-text h1 { font-size: 26px; }
+  .hero-inner { padding: 24px 18px; }
+  .hero-visual { flex-direction: column; }
+  .card-grid { grid-template-columns: 1fr 1fr; }
+  .cat-grid { grid-template-columns: 1fr 1fr; }
+  .header-search { display: none; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .update-item { flex-wrap: wrap; }
+  .news-item { flex-wrap: wrap; }
+  .back-top { bottom: 16px; right: 16px; width: 40px; height: 40px; }
+}
+@media (max-width: 480px) {
+  .card-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 + 页头 -->
+<div class="sticky-wrap">
+  <div class="announce-bar">
+    <span class="brand-tag">枫花恋2025最新作品</span>
+    <span class="ann-item"><span class="ann-date">11月7日</span> 新作《雪夜独白》幕后花絮公开</span>
+    <span class="ann-item"><span class="ann-date">11月5日</span> 2025年秋季作品合集上线 收录12部</span>
+    <span class="ann-item"><span class="ann-date">11月3日</span> 访谈实录：导演谈2025年创作转向</span>
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/#hero" class="brand" aria-label="枫花恋2025最新作品首页">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="#8b2f4b" stroke-width="2.5" fill="#fdf0f3"/>
+          <path d="M20 10c-3 4-5 7-5 10 0 3 2 5 5 5s5-2 5-5c0-3-2-6-5-10z" fill="#8b2f4b" opacity="0.85"/>
+          <path d="M13 22c2 5 5 7 7 7s5-2 7-7" stroke="#b95a72" stroke-width="1.5" fill="none"/>
+        </svg>
+        <span class="brand-text">枫花恋2025最新作品</span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选推荐</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#comments">用户评论</a>
+      </nav>
+      <div class="header-search">
+        <input type="search" id="searchInput" placeholder="搜索作品名/类型" aria-label="搜索作品">
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="打开导航菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<!-- 首屏 -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>枫花恋2025最新作品</h1>
+      <p class="hero-desc">2025年枫花恋作品聚合页面，收录《雪夜独白》《夏日终章》《她的午后》等12部已公开新作，以及幕后花絮、导演访谈、发行数据与观众反馈。按类型、发行时间和口碑三个方向整理，方便追踪每一部作品的进度与看点。</p>
+      <div class="hero-actions">
+        <a href="/#featured" class="btn-primary">浏览精选作品</a>
+        <a href="/#updates" class="btn-ghost">查看更新动态</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-stat"><span>2025年已公开新作</span><strong>12 部</strong></div>
+      <div class="hero-stat"><span>本月新增条目</span><strong>3 部</strong></div>
+      <div class="hero-stat"><span>幕后花絮/访谈</span><strong>8 篇</strong></div>
+      <div class="hero-stat"><span>最近更新</span><strong>11月7日</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- 三栏布局 -->
+<div class="layout">
+
+  <!-- 左频道索引 -->
+  <aside class="channel-sidebar">
+    <h2>频道索引</h2>
+    <nav aria-label="频道索引">
+      <a href="/#overview"><span class="ch-dot"></span>领域概览</a>
+      <a href="/#featured"><span class="ch-dot"></span>精选推荐</a>
+      <a href="/#updates"><span class="ch-dot"></span>最新动态</a>
+      <a href="/#categories"><span class="ch-dot"></span>分类入口</a>
+      <a href="/#deep-dive"><span class="ch-dot"></span>深度解析</a>
+      <a href="/#guide"><span class="ch-dot"></span>体验指南</a>
+      <a href="/#faq"><span class="ch-dot"></span>常见问答</a>
+      <a href="/#comments"><span class="ch-dot"></span>用户评论</a>
+      <a href="/#news"><span class="ch-dot"></span>相关资讯</a>
+      <a href="/#ranking"><span class="ch-dot"></span>热门榜单</a>
+      <a href="/#recommend"><span class="ch-dot"></span>相关推荐</a>
+      <a href="/#submit"><span class="ch-dot"></span>投稿互动</a>
+    </nav>
+  </aside>
+
+  <!-- 主内容 -->
+  <main class="main-content">
+
+    <!-- 1. 领域概览 -->
+    <section class="section" id="overview">
+      <h2>2025年作品类型与方向概览</h2>
+      <div class="overview-text">
+        <p>2025年枫花恋的作品线大致分成三个方向：一是偏叙事的长篇系列，以《雪夜独白》和《夏日终章》为代表，单部时长在90分钟以上，有完整的故事弧线；二是短篇合集，比如《她的午后》和《三分钟温度》，每部由3到5个独立片段组成，适合碎片时间观看；三是幕后纪录类，包括拍摄花絮、导演访谈和现场记录，目前已有8篇公开。</p>
+        <p>从发行节奏看，2025年上半年以短篇合集为主，7月之后转向长篇叙事，9月到10月密集发布了《雪夜独白》的先导预告和人物海报。11月的新作《沉默的告白》定档11月15日，目前已有两支预告片和一组剧照公开。类型上，2025年的作品比2024年更偏向现实主义题材，场景从室内扩展到街区、车站和海边，这一点在导演10月的访谈中有明确说明。</p>
+        <p>观众讨论集中在两个方向：长篇系列的情感线是否成立，以及短篇合集的选角标准。前者在评论区有超过200条讨论，后者更多出现在投稿互动区的提问里。</p>
+      </div>
+    </section>
+
+    <!-- 2. 精选内容推荐 -->
+    <section class="section" id="featured">
+      <h2>2025年精选作品推荐</h2>
+      <p class="section-sub">按发行时间与讨论热度综合排列</p>
+      <div class="card-grid" id="featuredGrid">
+        <article class="card">
+          <img src="https://picsum.photos/seed/fhl2025a/400/300" alt="《雪夜独白》雪景剧照，人物站在路灯下" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <h3>雪夜独白</h3>
+            <div class="card-tags">
+              <span class="tag tag-type">长篇叙事</span>
+              <span class="tag">冬季场景</span>
+              <span class="tag">情感线</span>
+            </div>
+            <p class="card-desc">2025年10月24日上线的90分钟长篇，讲述两个人在暴雪夜被困车站的六小时。导演用固定机位和长镜头处理对话场景，节奏偏慢但细节密。</p>
+            <div class="card-meta"><span>热度 2.4万</span><span>评分 8.6</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/fhl2025b/400/300" alt="《夏日终章》海边场景剧照，两人并肩坐在堤坝上" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <h3>夏日终章</h3>
+            <div class="card-tags">
+              <span class="tag tag-type">长篇叙事</span>
+              <span class="tag">海边</span>
+              <span class="tag">成长线</span>
+            </div>
+            <p class="card-desc">7月11日发布的夏季主打，取景地在镰仓和江之岛。故事围绕一次未完成的告别展开，后半段有大量手持跟拍镜头，与前半段的固定构图形成对比。</p>
+            <div class="card-meta"><span>热度 1.9万</span><span>评分 8.2</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/fhl2025c/400/300" alt="《她的午后》室内场景剧照，阳光透过窗帘" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <h3>她的午后</h3>
+            <div class="card-tags">
+              <span class="tag tag-type">短篇合集</span>
+              <span class="tag">日常</span>
+              <span class="tag">室内</span>
+            </div>
+            <p class="card-desc">5月30日上线的短篇合集，四个片段分别发生在同一间公寓的下午、傍晚、深夜和清晨。选角用了三位新人，第二段《水声》的表演被讨论最多。</p>
+            <div class="card-meta"><span>热度 1.2万</span><span>评分 7.9</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/fhl2025d/400/300" alt="《三分钟温度》系列封面，简洁的暖色调构图" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <h3>三分钟温度</h3>
+            <div class="card-tags">
+              <span class="tag tag-type">短篇合集</span>
+              <span class="tag">碎片叙事</span>
+              <span class="tag">实验</span>
+            </div>
+            <p class="card-desc">每集三分钟的短篇系列，2025年共更新了5集。第3集《便利店》全程只有一个机位，靠声音设计撑起场景，和系列其他集的拍法明显不同。</p>
+            <div class="card-meta"><span>热度 9800</span><span>评分 7.5</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/fhl2025e/400/300" alt="《沉默的告白》先导海报，暗色调人物剪影" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <h3>沉默的告白</h3>
+            <div class="card-tags">
+              <span class="tag tag-type">定档待映</span>
+              <span class="tag">11月15日</span>
+              <span class="tag">预告</span>
+            </div>
+            <p class="card-desc">定档11月15日，目前公开了两支预告片。第一支以环境音为主，第二支加入了钢琴配乐。预告里的场景集中在车站和旧公寓楼，和《雪夜独白》有地理上的呼应。</p>
+            <div class="card-meta"><span>热度 1.6万</span><span>期待值 8.9</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/fhl2025f/400/300" alt="《导演访谈：2025创作转向》录制现场" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <h3>导演访谈：2025创作转向</h3>
+            <div class="card-tags">
+              <span class="tag tag-type">幕后纪录</span>
+              <span class="tag">访谈</span>
+              <span class="tag">创作谈</span>
+            </div>
+            <p class="card-desc">10月20日发布的42分钟访谈，导演谈到了从室内剧转向外景拍摄的原因，以及选角标准的变化。访谈里提到《夏日终章》的堤坝场景拍了四天，最后用的是第三天傍晚的素材。</p>
+            <div class="card-meta"><span>播放 1.1万</span><span>时长 42min</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. 最新更新 / 动态 -->
+    <section class="section" id="updates">
+      <h2>11月第一周更新动态</h2>
+      <p class="section-sub">发行、花絮与档期调整</p>
+      <div class="update-list">
+        <div class="update-item">
+          <span class="update-date">11月7日</span>
+          <span class="update-title">《雪夜独白》幕后花絮第二弹</span>
+          <span class="update-summary">片场记录显示暴雪夜场景在长野拍摄，气温零下6度，主演在车站长椅上连续拍摄了7小时。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11月6日</span>
+          <span class="update-title">《沉默的告白》发布第二支预告</span>
+          <span class="update-summary">新预告时长1分48秒，比第一支多了40秒，出现了此前未公开的旧公寓楼内景和两组对话镜头。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11月5日</span>
+          <span class="update-title">2025年秋季作品合集上线</span>
+          <span class="update-summary">合集收录12部作品，包括《雪夜独白》《夏日终章》以及3部短篇合集，附赠8篇幕后文字记录。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11月4日</span>
+          <span class="update-title">《她的午后》第二段《水声》单独上线</span>
+          <span class="update-summary">应观众要求，第二段从合集中拆出单独成片，时长18分钟，新增了2分钟未收录的结尾镜头。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11月3日</span>
+          <span class="update-title">导演访谈实录全文发布</span>
+          <span class="update-summary">文字版共9200字，补充了视频版未收录的选角讨论，提到《三分钟温度》第3集的演员是开拍前三天才确定的。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11月1日</span>
+          <span class="update-title">《夏日终章》堤坝场景拍摄纪录片</span>
+          <span class="update-summary">14分钟短片记录了堤坝对话戏的拍摄过程，四天拍摄中有三天因天气原因调整机位，最终采用第三天傍晚的逆光素材。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-date">10月30日</span>
+          <span class="update-title">《沉默的告白》剧照组公开</span>
+          <span class="update-summary">6张剧照中4张为车站场景，2张为室内。室内场景的布置和《雪夜独白》的车站候车室有明显相似。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-date">10月28日</span>
+          <span class="update-title">秋季合集预售数据公开</span>
+          <span class="update-summary">预售首日订单量1.2万，其中《雪夜独白》单部占预售总量的43%，《夏日终章》占27%。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-date">10月26日</span>
+          <span class="update-title">《雪夜独白》上线首周数据</span>
+          <span class="update-summary">首周播放量8.7万，完播率61%，评论区讨论集中在六小时叙事的时间线处理上。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-date">10月24日</span>
+          <span class="update-title">《雪夜独白》正式上线</span>
+          <span class="update-summary">90分钟正片上线，同步公开了首支幕后花絮和一组车站场景剧照。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 分类入口 -->
+    <section class="section" id="categories">
+      <h2>作品分类与类型入口</h2>
+      <p class="section-sub">按内容方向与发行形态划分</p>
+      <div class="cat-grid">
+        <a href="/#featured" class="cat-item">长篇叙事<span class="cat-count">4 部</span></a>
+        <a href="/#featured" class="cat-item">短篇合集<span class="cat-count">5 部</span></a>
+        <a href="/#featured" class="cat-item">幕后纪录<span class="cat-count">8 篇</span></a>
+        <a href="/#featured" class="cat-item">冬季场景<span class="cat-count">3 部</span></a>
+        <a href="/#featured" class="cat-item">海边取景<span class="cat-count">2 部</span></a>
+        <a href="/#featured" class="cat-item">定档待映<span class="cat-count">1 部</span></a>
+        <a href="/#featured" class="cat-item">导演访谈<span class="cat-count">3 篇</span></a>
+        <a href="/#featured" class="cat-item">拍摄花絮<span class="cat-count">5 篇</span></a>
+      </div>
+    </section>
+
+    <!-- 5. 深度解析 -->
+    <section class="section deep-dive" id="deep-dive">
+      <h2>2025年作品叙事结构的三处变化</h2>
+      <p>把2025年的作品和2024年放在一起看，有三处变化是可以具体核对的：场景从室内向外景扩展、单部时长从60分钟拉长到90分钟、选角从固定班底转向新人搭配。这三件事在导演10月20日的访谈里都有对应的说法，但访谈没有展开的是，这些变化对具体的作品意味着什么。</p>
+
+      <h3>外景比例上升与叙事节奏的冲突</h3>
+      <p>《夏日终章》全片有67%的场景在户外，对比2024年的《房间之间》外景只占12%。外景多带来的直接问题是环境音不可控。堤坝对话戏拍摄四天，其中三天因为风声过大无法收音，最后采用的第三天傍晚素材，同期声里有明显的海浪声和风噪。导演在访谈里承认，这段对话最后做了后期配音，口型对位调整了两次。</p>
+      <p>外景比例上升还改变了剪辑节奏。《房间之间》的室内场景平均镜头长度是22秒，而《夏日终章》外景部分的平均镜头长度只有11秒。镜头变短之后，观众在评论区的反馈出现分化：一部分人认为外景让画面更开阔，另一部分人提到堤坝戏的对话还没听清就切走了。</p>
+      <div class="divider-quote">可核对的数据：《夏日终章》外景占67%，平均镜头11秒；2024年《房间之间》外景占12%，平均镜头22秒。两组数字来自导演访谈和片尾字幕的拍摄记录。</div>
+
+      <h3>90分钟长篇的完播率与结构选择</h3>
+      <p>《雪夜独白》90分钟，完播率61%。这个数字放到长篇作品里不算低，但拆开看，前30分钟完播率最高，到60分钟附近有一个明显的流失点。流失点对应的情节是两人在候车室长时间沉默的一段，时长约8分钟，只有环境音和三个固定机位。</p>
+      <p>同样的长沉默处理在2024年的《夜行》里也出现过，时长5分钟，但那一部把沉默段落放在了全片第20分钟，而不是中后段。位置不同，观众的反应也不同。《雪夜独白》的评论区里有14条提到这段沉默“太长了”，而《夜行》的同一类评论只有3条。时长从5分钟拉到8分钟是一方面，位置从中前段挪到中后段是另一方面。</p>
+
+      <h3>新人选角对短篇合集的影响</h3>
+      <p>《她的午后》用了三位此前没有作品记录的新人。第二段《水声》的表演在评论区被讨论最多，正面和负面的比例大致是6比4。正面评价集中在“生涩感刚好贴合角色”，负面评价集中在台词清晰度。把《水声》和《三分钟温度》第3集《便利店》做对照会发现，两部都是单人场景为主的短篇，但《便利店》用的是有三年舞台经验的演员，台词问题少，情绪层次也更明确。</p>
+      <ul>
+        <li>《水声》18分钟，主演无影视作品记录，台词失误在成片中出现2处。</li>
+        <li>《便利店》3分钟，主演有舞台经验，无台词失误，情绪转换集中在最后40秒。</li>
+        <li>两部在评论区的正面率分别是60%和78%，差距主要来自台词清晰度的评价。</li>
+      </ul>
+      <p>选新人的策略在短篇里风险更可控——单部时长短，观众的容错空间大。放到90分钟的长篇里，同样的生涩感会被放大。《沉默的告白》的主演阵容目前只公开了两位，其中一位也是新人，这部11月15日上线后的反馈可以看作这个判断的下一个检验点。</p>
+    </section>
+
+    <!-- 6. 体验指南 -->
+    <section class="section" id="guide">
+      <h2>按时间与类型选择观看顺序</h2>
+      <p class="section-sub">从时长、场景和叙事密度三个角度排优先级</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>先看短篇合集，判断风格偏好</h4>
+            <p>《她的午后》四个片段加在一起不到70分钟，四段的拍法各不相同。看完能大致判断自己更接受室内日常还是外景叙事，再决定要不要投入90分钟看长篇。第二段《水声》和第四段《清晨》的风格差异最大，可以先看这两段。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>长篇按发行时间倒序看</h4>
+            <p>《雪夜独白》在10月，《夏日终章》在7月。倒序看的好处是能感知到导演在三个月内的调整——《雪夜独白》的沉默段落比《夏日终章》的堤坝戏更长，镜头也更固定。正序看则更接近创作的实际推进方向。两种顺序没有对错，取决于关注的是结果还是过程。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>幕后内容放在正片之后</h4>
+            <p>导演访谈和拍摄花絮里包含大量正片细节的拆解，先看幕后会削弱正片本身的悬念。建议先看正片，再按发行时间看对应的花絮。花絮和访谈的观看顺序可以反过来——访谈给的是整体框架，花絮给的是现场细节，框架先立起来，细节才容易定位。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>定档作品用预告和剧照做预判</h4>
+            <p>《沉默的告白》的两支预告片信息量不同：第一支靠环境音和空镜，第二支有对话和钢琴配乐。把两支预告对照看，能大致判断正片的节奏偏向。剧照里车站场景和《雪夜独白》的候车室相似度高，如果喜欢《雪夜独白》的空间感，这部值得优先关注。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section" id="faq">
+      <h2>关于2025年作品的常见问题</h2>
+      <div class="faq-list">
+        <details>
+          <summary>《雪夜独白》和《夏日终章》是同一个系列吗？</summary>
+          <div class="faq-answer">不是同一系列，但共享场景设计上的延续性。《雪夜独白》的车站候车室和《夏日终章》的堤坝场景在空间处理上用了相似的构图逻辑——都是横向长画幅、人物偏画面一侧、留出大面积环境。两部由同一位导演执导，拍摄时间相隔不到三个月，但故事和人物没有关联。</div>
+        </details>
+        <details>
+          <summary>短篇合集和长篇叙事在拍摄成本上差多少？</summary>
+          <div class="faq-answer">从公开的拍摄记录看，《她的午后》四个片段的总拍摄周期是9天，场景基本固定在一间公寓；《雪夜独白》单部拍摄周期14天，涉及长野外景和车站搭景。周期差5天，但外景的交通、天气等待和场地协调占了《雪夜独白》拍摄时间的将近一半。成本差距主要不在演员和器材，在外景的不可控因素。</div>
+        </details>
+        <details>
+          <summary>《沉默的告白》11月15日上线后多久会有幕后花絮？</summary>
+          <div class="faq-answer">参考《雪夜独白》的节奏，正片上线当天同步发布了首支花絮，第二支花絮在两周后。如果《沉默的告白》沿用同样的发行安排，11月15日当天会有首支花絮，月底前后可能有第二支。这个时间线基于前作的发行记录，不是官方排期。</div>
+        </details>
+        <details>
+          <summary>为什么2025年的作品外景比例明显变高？</summary>
+          <div class="faq-answer">导演在10月20日的访谈里给出的原因是室内剧拍多了之后，空间调度开始重复，想用外景来打破固定机位的惯性。另一个可以核对的原因是2025年上半年的短篇合集《三分钟温度》几乎全部在室内完成，到了下半年，外景就成了有意的调整方向。这两个原因在访谈里是前后出现的，后者更可能是一开始的具体动因。</div>
+        </details>
+        <details>
+          <summary>《水声》单独上线后和合集里的版本有区别吗？</summary>
+          <div class="faq-answer">有区别。单独版18分钟，比合集里的版本多了2分钟结尾镜头。多出来的部分是一段固定机位的空镜，没有对话，只有环境音。这段在合集版里被剪掉的原因是合集需要控制总时长在70分钟以内，单独上线后不再受这个限制。</div>
+        </details>
+        <details>
+          <summary>2025年还有没有未公开的新作计划？</summary>
+          <div class="faq-answer">目前公开的排期只到11月15日的《沉默的告白》。12月的档期在发行方的公开信息里没有明确说明。从拍摄记录看，10月底到11月初有两组未标注项目名的外景拍摄记录，地点在千叶的海岸线附近，是否对应新作还没有确认。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8. 用户评论 -->
+    <section class="section" id="comments">
+      <h2>观众与读者评论</h2>
+      <p class="section-sub">来自评论区和投稿互动的留言</p>
+      <div class="comment-list">
+        <div class="comment-item">
+          <div class="comment-avatar">林</div>
+          <div class="comment-body"><div class="comment-name">林稚一</div><div class="comment-text">《雪夜独白》那段8分钟的沉默我倒是没快进，但确实能感觉到身边有人在这里退出了。长野的雪景拍得值，冷是冷，画面撑住了。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">陈</div>
+          <div class="comment-body"><div class="comment-name">陈默然</div><div class="comment-text">《夏日终章》堤坝那段对话我回看了三遍才听清，风噪不是一般的大。后来知道是后期配的，反而觉得配得还行，口型对得算准。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">苏</div>
+          <div class="comment-body"><div class="comment-name">苏打水没气</div><div class="comment-text">《水声》单独版多出来的两分钟空镜，不加其实也行。合集里剪掉是有道理的。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">周</div>
+          <div class="comment-body"><div class="comment-name">周舟</div><div class="comment-text">《便利店》那集三分钟，声音设计真的顶。全程一个机位，但靠冰柜的嗡嗡声和收银机提示音就把空间立起来了。比某些90分钟的还耐看。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">黄</div>
+          <div class="comment-body"><div class="comment-name">黄小年</div><div class="comment-text">预购了秋季合集，冲《雪夜独白》去的。12部里其实有3部短篇之前已经单看过，合集版没有额外内容，这点要是能标清楚就好了。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">吴</div>
+          <div class="comment-body"><div class="comment-name">吴起</div><div class="comment-text">导演访谈文字版比视频版好看，9200字里有不少视频没剪进去的，比如《三分钟温度》第3集那个开拍前三天换演员的事，视频里一句带过。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">郑</div>
+          <div class="comment-body"><div class="comment-name">郑一舟</div><div class="comment-text">《她的午后》第二段的台词确实有点听不清，新人可以理解，但正片里没做字幕强化有点可惜。其他三段没这个问题。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">何</div>
+          <div class="comment-body"><div class="comment-name">何许人</div><div class="comment-text">新人选角这个方向没问题，短篇里容错空间大。《沉默的告白》要还是新人挑大梁，90分钟就不好说了，等15号看。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">许</div>
+          <div class="comment-body"><div class="comment-name">许安</div><div class="comment-text">《沉默的告白》第一支预告基本没台词，第二支突然钢琴一响，气质变了。不知道正片是哪种调子。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">赵</div>
+          <div class="comment-body"><div class="comment-name">赵之遥</div><div class="comment-text">最近降温，又翻出《雪夜独白》看了一遍。零下6度拍7个小时，演员的状态是真的，冷到说话带白气那种不是演出来的。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">钱</div>
+          <div class="comment-body"><div class="comment-name">钱多多</div><div class="comment-text">秋季合集里《夏日终章》和单看的一样，没有新增内容。买之前最好对一下清单。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">孙</div>
+          <div class="comment-body"><div class="comment-name">孙不二</div><div class="comment-text">41分钟访谈看到一半去泡了碗面，回来接着看。讲选角那段最有意思，什么“开拍前三天才定”这种细节，不写出来根本猜不到。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">李</div>
+          <div class="comment-body"><div class="comment-name">李青崖</div><div class="comment-text">个人觉得外景比例高不一定是好事，室内剧的精密度是外景换不来的。《房间之间》那种12%外景的片子，反而每一帧都更经得起看。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">郭</div>
+          <div class="comment-body"><div class="comment-name">郭大侠</div><div class="comment-text">完播率61%这个数不知道算好算坏，但前30分钟确实最好看，后面节奏一慢就有点走神。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">白</div>
+          <div class="comment-body"><div class="comment-name">白桃乌龙</div><div class="comment-text">《三分钟温度》第3集我循环看了好几遍，三分钟里信息量比有些长篇一集还多。这种短篇其实最考导演。</div></div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">沈</div>
+          <div class="comment-body"><div class="comment-name">沈知秋</div><div class="comment-text">千叶海岸那组拍摄记录有人注意到吗？没标项目名，不知道是不是12月的新东西。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. 相关资讯 -->
+    <section class="section" id="news">
+      <h2>近期相关资讯</h2>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">11月7日</span>
+          <div class="news-content">
+            <h3>《雪夜独白》暴雪夜花絮公开 长野拍摄连续7小时</h3>
+            <p>花絮显示车站场景在长野县一处废弃候车室搭景完成，拍摄当天最低气温零下6度。剧组用了两台暖风机，演员在镜头间隙需要披毯子。主演在花絮里提到，有一场戏因为呼气白气太重，重拍了四次才达到导演要求。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">11月6日</span>
+          <div class="news-content">
+            <h3>《沉默的告白》第二支预告加入钢琴配乐 时长增至1分48秒</h3>
+            <p>新预告比第一支长了40秒，增加的片段包括旧公寓楼的内景和两组对话镜头。配乐从环境音切换为钢琴独奏，和第一支预告的极简风格形成对比。发行方未说明正片配乐是否延续钢琴路线。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">11月5日</span>
+          <div class="news-content">
+            <h3>2025秋季作品合集上线 12部作品含3部短篇新剪辑</h3>
+            <p>合集包含《雪夜独白》《夏日终章》等12部作品，其中3部短篇做了重新剪辑。《她的午后》的第二段《水声》在合集中被替换为18分钟版本，比原版多2分钟结尾空镜。合集另附8篇幕后文字记录，此前未单独发布。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">11月3日</span>
+          <div class="news-content">
+            <h3>导演访谈全文发布 9200字补充选角细节</h3>
+            <p>文字版访谈补充了视频版未收录的内容，包括《三分钟温度》第3集演员在开拍前三天才确定，以及《夏日终章》堤坝场景第三天傍晚的逆光素材被最终采用的原因。访谈还提到2025年下半年的外景拍摄计划在年初就已确定。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">10月30日</span>
+          <div class="news-content">
+            <h3>《沉默的告白》剧照组公开 车站场景占四张</h3>
+            <p>6张剧照中有4张为车站场景，其中2张的构图和《雪夜独白》候车室场景接近。另外2张室内剧照的窗户位置和《她的午后》公寓一致，是否为同一取景地尚未确认。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">10月28日</span>
+          <div class="news-content">
+            <h3>秋季合集预售首日订单1.2万 《雪夜独白》占43%</h3>
+            <p>预售数据显示《雪夜独白》单部订单占总量43%，《夏日终章》占27%，其余作品合计30%。按单部计价，《雪夜独白》的预售额约为《夏日终章》的1.6倍。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. 相关推荐 -->
+    <section class="section" id="recommend">
+      <h2>相关推荐与搜索标签</h2>
+      <div class="rec-tags">
+        <a href="/#featured" class="rec-tag">雪夜独白</a>
+        <a href="/#featured" class="rec-tag">夏日终章</a>
+        <a href="/#featured" class="rec-tag">她的午后</a>
+        <a href="/#featured" class="rec-tag">三分钟温度</a>
+        <a href="/#featured" class="rec-tag">沉默的告白</a>
+        <a href="/#featured" class="rec-tag">导演访谈全文</a>
+        <a href="/#featured" class="rec-tag">暴雪夜拍摄花絮</a>
+        <a href="/#featured" class="rec-tag">短篇合集选角</a>
+      </div>
+    </section>
+
+    <!-- 11. 热门榜单 -->
+    <section class="section" id="ranking">
+      <h2>2025年作品热度榜</h2>
+      <p class="section-sub">按播放量与讨论量综合排序（截至11月7日）</p>
+      <div class="rank-list">
+        <div class="rank-item"><span class="rank-num">1</span><span class="rank-title">雪夜独白</span><span class="rank-score">热度 2.4万</span></div>
+        <div class="rank-item"><span class="rank-num">2</span><span class="rank-title">夏日终章</span><span class="rank-score">热度 1.9万</span></div>
+        <div class="rank-item"><span class="rank-num">3</span><span class="rank-title">沉默的告白（预告）</span><span class="rank-score">期待值 1.6万</span></div>
+        <div class="rank-item"><span class="rank-num">4</span><span class="rank-title">她的午后</span><span class="rank-score">热度 1.2万</span></div>
+        <div class="rank-item"><span class="rank-num">5</span><span class="rank-title">导演访谈：2025创作转向</span><span class="rank-score">播放 1.1万</span></div>
+        <div class="rank-item"><span class="rank-num">6</span><span class="rank-title">三分钟温度</span><span class="rank-score">热度 9800</span></div>
+      </div>
+    </section>
+
+    <!-- 12. 投稿互动 -->
+    <section class="section" id="submit">
+      <div class="submit-box">
+        <h3>投稿你的观后感或幕后线索</h3>
+        <p>如果你发现了未公开的拍摄记录、预告片细节或正片彩蛋，可以在这里提交。优质的观后感线索会整理进对应的作品条目。</p>
+        <button class="btn-primary" type="button" onclick="alert('投稿入口为示例功能，正式环境需接入表单服务。')">提交投稿</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右侧辅助栏 -->
+  <aside class="assist-sidebar">
+    <div class="assist-card">
+      <h3>热门条目</h3>
+      <div class="hot-list">
+        <div class="hot-item"><span class="hot-rank">01</span><span class="hot-title">雪夜独白</span></div>
+        <div class="hot-item"><span class="hot-rank">02</span><span class="hot-title">夏日终章</span></div>
+        <div class="hot-item"><span class="hot-rank">03</span><span class="hot-title">沉默的告白</span></div>
+        <div class="hot-item"><span class="hot-rank">04</span><span class="hot-title">她的午后</span></div>
+        <div class="hot-item"><span class="hot-rank">05</span><span class="hot-title">三分钟温度</span></div>
+        <div class="hot-item"><span class="hot-rank">06</span><span class="hot-title">导演访谈全文</span></div>
+      </div>
+    </div>
+    <div class="assist-card">
+      <h3>更新流</h3>
+      <div class="update-stream">
+        <div class="stream-item"><span class="stream-date">11月7日</span>《雪夜独白》花絮第二弹</div>
+        <div class="stream-item"><span class="stream-date">11月6日</span>《沉默的告白》预告二</div>
+        <div class="stream-item"><span class="stream-date">11月5日</span>秋季合集上线</div>
+        <div class="stream-item"><span class="stream-date">11月4日</span>《水声》单独版</div>
+        <div class="stream-item"><span class="stream-date">11月3日</span>导演访谈全文</div>
+      </div>
+    </div>
+    <div class="assist-card">
+      <h3>数据速览</h3>
+      <div class="update-stream">
+        <div class="stream-item">2025年已公开作品 <strong>12 部</strong></div>
+        <div class="stream-item">幕后纪录与访谈 <strong>8 篇</strong></div>
+        <div class="stream-item">定档待映 <strong>1 部</strong></div>
+        <div class="stream-item">最近更新 <strong>11月7日</strong></div>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">枫花恋2025最新作品</div>
+      <p class="footer-desc">覆盖2025年1月至11月已公开的12部作品与8篇幕后记录，条目类型包括长篇叙事、短篇合集、预告片、拍摄花絮和导演访谈。更新节奏跟随发行方公开信息，正片上线当天同步条目，花絮和访谈按发布进度补充。</p>
+    </div>
+    <div class="footer-col">
+      <h4>内容入口</h4>
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选推荐</a>
+      <a href="/#updates">最新动态</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">体验指南</a>
+    </div>
+    <div class="footer-col">
+      <h4>互动与帮助</h4>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">用户评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">相关推荐</a>
+      <a href="/#submit">投稿互动</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>内容为示例条目，用于展示作品聚合页结构。品牌与版权信息以官方发布为准。</span>
+    <span>更新时间：2026年11月8日</span>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  // 搜索筛选
+  var searchInput = document.getElementById('searchInput');
+  var featuredGrid = document.getElementById('featuredGrid');
+  if (searchInput && featuredGrid) {
+    searchInput.addEventListener('input', function(){
+      var q = this.value.trim().toLowerCase();
+      var cards = featuredGrid.querySelectorAll('.card');
+      var visible = 0;
+      cards.forEach(function(card){
+        var text = card.textContent.toLowerCase();
+        if (!q || text.indexOf(q) !== -1) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      var oldMsg = featuredGrid.querySelector('.no-result');
+      if (oldMsg) oldMsg.remove();
+      if (visible === 0) {
+        var msg = document.createElement('p');
+        msg.className = 'no-result';
+        msg.style.cssText = 'grid-column:1/-1;text-align:center;color:var(--text-tertiary);font-size:14px;padding:20px 0;';
+        msg.textContent = '没有找到匹配的作品，试试其他关键词。';
+        featuredGrid.appendChild(msg);
+      }
+    });
+  }
+
+  // 移动端菜单
+  var hamburger = document.getElementById('hamburgerBtn');
+  var mainNav = document.getElementById('mainNav');
+  var overlay = document.getElementById('overlay');
+  function closeMenu() {
+    if (mainNav) mainNav.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+  }
+  if (hamburger && mainNav) {
+    hamburger.addEventListener('click', function(){
+      var isOpen = mainNav.classList.toggle('active');
+      overlay.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    mainNav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+    if (overlay) overlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  // 回到顶部
+  var backTop = document.getElementById('backTop');
+  if (backTop) {
+    window.addEventListener('scroll', function(){
+      backTop.style.display = window.scrollY > window.innerHeight ? 'flex' : 'none';
+    });
+    backTop.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+})();
+</script>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "枫花恋2025最新作品",
+  "description": "枫花恋2025最新作品聚合页，涵盖新作条目、发行动态、类型分类与深度解析。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "《雪夜独白》和《夏日终章》是同一个系列吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不是同一系列，但共享场景设计上的延续性。《雪夜独白》的车站候车室和《夏日终章》的堤坝场景在空间处理上用了相似的构图逻辑，两部由同一位导演执导，故事和人物没有关联。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "短篇合集和长篇叙事在拍摄成本上差多少？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "从公开的拍摄记录看，《她的午后》四个片段的总拍摄周期是9天，《雪夜独白》单部拍摄周期14天。成本差距主要不在演员和器材，在外景的交通、天气等待和场地协调。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《沉默的告白》11月15日上线后多久会有幕后花絮？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "参考《雪夜独白》的节奏，正片上线当天同步发布首支花絮，第二支在两周后。如果沿用同样的安排，11月15日当天会有首支花絮，月底前后可能有第二支。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么2025年的作品外景比例明显变高？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "导演在10月20日的访谈里给出的原因是室内剧拍多了之后空间调度开始重复。另一个可核对的原因是上半年短篇合集几乎全部在室内完成，下半年外景成为有意的调整方向。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《水声》单独上线后和合集里的版本有区别吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "有区别。单独版18分钟，比合集版多了2分钟结尾镜头，是一段固定机位的空镜，没有对话，只有环境音。合集版剪掉是为了控制总时长在70分钟以内。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2025年还有没有未公开的新作计划？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "目前公开的排期只到11月15日的《沉默的告白》。10月底到11月初有两组未标注项目名的外景拍摄记录，地点在千叶海岸线附近，是否对应新作尚未确认。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+          </html>
